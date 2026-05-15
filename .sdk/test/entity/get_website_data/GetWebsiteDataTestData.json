@@ -1,0 +1,26 @@
+{
+  "existing": {
+    "get_website_data": {
+      "GET_WEBSITE_DATA00": {
+        "data": {},
+        "status": "s15"
+      },
+      "GET_WEBSITE_DATA01": {
+        "data": {},
+        "status": "s29"
+      },
+      "GET_WEBSITE_DATA02": {
+        "data": {},
+        "status": "s3d"
+      }
+    }
+  },
+  "new": {
+    "get_website_data": {
+      "get_website_data_ref01": {
+        "data": {},
+        "status": "s51"
+      }
+    }
+  }
+}

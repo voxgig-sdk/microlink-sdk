@@ -1,0 +1,856 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Microlink API",
+    "description": "Powerful API for automating browser actions. Retrieve meta data, take screenshots, generate PDFs, get color palettes, embed content, identify technologies, and more.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Microlink API Documentation",
+      "url": "https://microlink.io/docs/api/getting-started/overview"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.microlink.io",
+      "description": "Production API Server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get website data",
+        "description": "Extract structured data from any URL. Returns metadata, screenshots, PDFs, color palettes, embedded content, detected technologies, and more based on the query parameters provided.",
+        "operationId": "getWebsiteData",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "The target URL to extract data from",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uri",
+              "example": "https://github.com/microlinkhq"
+            }
+          },
+          {
+            "name": "adblock",
+            "in": "query",
+            "description": "Enable ad blocking",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "animations",
+            "in": "query",
+            "description": "Enable or disable CSS animations",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "audio",
+            "in": "query",
+            "description": "Enable audio extraction",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "click",
+            "in": "query",
+            "description": "CSS selector to click before capturing",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "colorScheme",
+            "in": "query",
+            "description": "Color scheme preference (light or dark)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "light",
+                "dark"
+              ]
+            }
+          },
+          {
+            "name": "data",
+            "in": "query",
+            "description": "Custom data extraction rules",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "device",
+            "in": "query",
+            "description": "Device emulation type",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "embed",
+            "in": "query",
+            "description": "Enable embed mode for content",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filename",
+            "in": "query",
+            "description": "Custom filename for downloaded resources",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter data fields in response",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Force bypass cache",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "function",
+            "in": "query",
+            "description": "Custom JavaScript function to execute",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "headers",
+            "in": "query",
+            "description": "Custom HTTP headers",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "iframe",
+            "in": "query",
+            "description": "Enable iframe mode",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "insights",
+            "in": "query",
+            "description": "Enable insights analysis",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "lighthouse",
+            "in": "query",
+            "description": "Enable Lighthouse performance audit",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "technologies",
+            "in": "query",
+            "description": "Detect technologies used on the website",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "javascript",
+            "in": "query",
+            "description": "Enable or disable JavaScript execution",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "mediaType",
+            "in": "query",
+            "description": "Media type for rendering",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "screen",
+                "print"
+              ]
+            }
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "Enable metadata extraction",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "modules",
+            "in": "query",
+            "description": "Enable ES modules support",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "palette",
+            "in": "query",
+            "description": "Extract color palette from images",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "pdf",
+            "in": "query",
+            "description": "Generate PDF from the page",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "pdf.format",
+            "in": "query",
+            "description": "PDF page format",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Letter",
+                "Legal",
+                "Tabloid",
+                "Ledger",
+                "A0",
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "A6"
+              ]
+            }
+          },
+          {
+            "name": "pdf.height",
+            "in": "query",
+            "description": "PDF page height",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pdf.landscape",
+            "in": "query",
+            "description": "PDF landscape orientation",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "pdf.margin",
+            "in": "query",
+            "description": "PDF page margins",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pdf.pageRanges",
+            "in": "query",
+            "description": "PDF page ranges to include",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pdf.scale",
+            "in": "query",
+            "description": "PDF scale factor",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 2
+            }
+          },
+          {
+            "name": "pdf.width",
+            "in": "query",
+            "description": "PDF page width",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ping",
+            "in": "query",
+            "description": "Health check endpoint",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "prerender",
+            "in": "query",
+            "description": "Enable prerender mode for client-side frameworks",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "proxy",
+            "in": "query",
+            "description": "Proxy configuration",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retry",
+            "in": "query",
+            "description": "Number of retry attempts",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "screenshot",
+            "in": "query",
+            "description": "Take a screenshot of the page",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "screenshot.codeScheme",
+            "in": "query",
+            "description": "Color scheme for code screenshots",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "screenshot.element",
+            "in": "query",
+            "description": "CSS selector for element screenshot",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "screenshot.fullPage",
+            "in": "query",
+            "description": "Capture full page screenshot",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "screenshot.overlay",
+            "in": "query",
+            "description": "Add overlay to screenshot",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "screenshot.omitBackground",
+            "in": "query",
+            "description": "Omit background in screenshot",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "screenshot.type",
+            "in": "query",
+            "description": "Screenshot image format",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "png",
+                "jpeg",
+                "webp"
+              ]
+            }
+          },
+          {
+            "name": "scripts",
+            "in": "query",
+            "description": "Custom scripts to inject",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scroll",
+            "in": "query",
+            "description": "Scroll configuration",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "styles",
+            "in": "query",
+            "description": "Custom CSS styles to inject",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "staleTtl",
+            "in": "query",
+            "description": "Stale cache time-to-live in milliseconds",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "timeout",
+            "in": "query",
+            "description": "Request timeout in milliseconds",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ttl",
+            "in": "query",
+            "description": "Cache time-to-live in milliseconds",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "video",
+            "in": "query",
+            "description": "Enable video extraction",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "viewport",
+            "in": "query",
+            "description": "Viewport dimensions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "waitForSelector",
+            "in": "query",
+            "description": "CSS selector to wait for before capturing",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "waitForTimeout",
+            "in": "query",
+            "description": "Time to wait before capturing in milliseconds",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "waitUntil",
+            "in": "query",
+            "description": "Wait until specific page load event",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "load",
+                "domcontentloaded",
+                "networkidle0",
+                "networkidle2"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with extracted data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "success",
+                        "error"
+                      ],
+                      "description": "Status of the API request"
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "Extracted data from the target URL",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "description": "Page title"
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "Page description"
+                        },
+                        "lang": {
+                          "type": "string",
+                          "description": "Page language"
+                        },
+                        "author": {
+                          "type": "string",
+                          "nullable": true,
+                          "description": "Page author"
+                        },
+                        "publisher": {
+                          "type": "string",
+                          "description": "Page publisher"
+                        },
+                        "image": {
+                          "type": "object",
+                          "description": "Primary image data",
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "size_pretty": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Publication date"
+                        },
+                        "url": {
+                          "type": "string",
+                          "format": "uri",
+                          "description": "Canonical URL"
+                        },
+                        "logo": {
+                          "type": "object",
+                          "description": "Site logo data",
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "size_pretty": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "screenshot": {
+                          "type": "object",
+                          "description": "Screenshot data (when screenshot=true)",
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "size_pretty": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "pdf": {
+                          "type": "object",
+                          "description": "PDF data (when pdf=true)",
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "format": "uri"
+                            },
+                            "type": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "integer"
+                            },
+                            "size_pretty": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "palette": {
+                          "type": "array",
+                          "description": "Color palette (when palette=true)",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "technologies": {
+                          "type": "array",
+                          "description": "Detected technologies (when technologies=true)",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "confidence": {
+                                "type": "integer"
+                              },
+                              "version": {
+                                "type": "string"
+                              },
+                              "icon": {
+                                "type": "string"
+                              },
+                              "website": {
+                                "type": "string"
+                              },
+                              "categories": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "value": {
+                      "status": "success",
+                      "data": {
+                        "title": "microlink.io",
+                        "description": "Turn websites into data. microlink.io has 34 repositories available. Follow their code on GitHub.",
+                        "lang": "en",
+                        "author": null,
+                        "publisher": "GitHub",
+                        "image": {
+                          "url": "https://avatars0.githubusercontent.com/u/29799436?s=280&v=4",
+                          "type": "png",
+                          "size": 4118,
+                          "height": 280,
+                          "width": 280,
+                          "size_pretty": "4.12 kB"
+                        },
+                        "date": "2020-09-22T09:33:36.000Z",
+                        "url": "https://github.com/microlinkhq",
+                        "logo": {
+                          "url": "https://logo.clearbit.com/github.com",
+                          "type": "png",
+                          "size": 6313,
+                          "height": 128,
+                          "width": 128,
+                          "size_pretty": "6.31 kB"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "error"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Error message"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Error code"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "error"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Rate limit error message"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Error code"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "error"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Error message"
+                    },
+                    "code": {
+                      "type": "string",
+                      "description": "Error code"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Website Data Extraction"
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Website Data Extraction",
+      "description": "Extract structured data, take screenshots, generate PDFs, and analyze websites"
+    }
+  ],
+  "externalDocs": {
+    "description": "Full API Documentation",
+    "url": "https://microlink.io/docs/api/getting-started/overview"
+  }
+}

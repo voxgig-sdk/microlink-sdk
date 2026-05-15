@@ -1,0 +1,28 @@
+# BasicGetWebsiteDataFlow
+
+main: kit: flow: BasicGetWebsiteDataFlow:
+{
+  entity: "get_website_data",
+  kind: "basic",
+  name: "BasicGetWebsiteDataFlow",
+  step: [
+    {
+      input: {
+        ref: "get_website_data_ref01",
+        srcdatavar: "get_website_data_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-get_website_data_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGetWebsiteDataFlow"
+}

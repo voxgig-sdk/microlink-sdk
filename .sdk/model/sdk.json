@@ -1,0 +1,824 @@
+{
+  "name": "microlink",
+  "origin": "voxgig-sdk",
+  "def": "microlink_0.1.0.json",
+  "main": {
+    "kit": {
+      "info": {
+        "contact": {
+          "name": "Microlink API Documentation",
+          "url": "https://microlink.io/docs/api/getting-started/overview"
+        },
+        "description": "Powerful API for automating browser actions. Retrieve meta data, take screenshots, generate PDFs, get color palettes, embed content, identify technologies, and more.",
+        "servers": [
+          {
+            "description": "Production API Server",
+            "url": "https://api.microlink.io"
+          }
+        ],
+        "title": "Microlink API",
+        "version": "1.0.0"
+      },
+      "config": {
+        "auth": {
+          "prefix": "Bearer"
+        },
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "entity": {
+        "get_website_data": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "data",
+              "req": false,
+              "type": "`$OBJECT`",
+              "active": true
+            },
+            {
+              "name": "status",
+              "req": false,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "get_website_data",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "args": {
+                    "query": [
+                      {
+                        "kind": "query",
+                        "name": "adblock",
+                        "orig": "adblock",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "animation",
+                        "orig": "animation",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "audio",
+                        "orig": "audio",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "click",
+                        "orig": "click",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "color_scheme",
+                        "orig": "color_scheme",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "data",
+                        "orig": "data",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "device",
+                        "orig": "device",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "embed",
+                        "orig": "embed",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "filename",
+                        "orig": "filename",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "filter",
+                        "orig": "filter",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "force",
+                        "orig": "force",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "function",
+                        "orig": "function",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "header",
+                        "orig": "header",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "iframe",
+                        "orig": "iframe",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "insight",
+                        "orig": "insight",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "javascript",
+                        "orig": "javascript",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "lighthouses",
+                        "orig": "lighthouses",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "media_type",
+                        "orig": "media_type",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "meta",
+                        "orig": "meta",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "module",
+                        "orig": "module",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "palette",
+                        "orig": "palette",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf",
+                        "orig": "pdf",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_format",
+                        "orig": "pdf_format",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_height",
+                        "orig": "pdf_height",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_landscape",
+                        "orig": "pdf_landscape",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_margin",
+                        "orig": "pdf_margin",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_page_range",
+                        "orig": "pdf_page_range",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_scale",
+                        "orig": "pdf_scale",
+                        "reqd": false,
+                        "type": "`$NUMBER`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "pdf_width",
+                        "orig": "pdf_width",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "ping",
+                        "orig": "ping",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "prerender",
+                        "orig": "prerender",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "proxy",
+                        "orig": "proxy",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "retry",
+                        "orig": "retry",
+                        "reqd": false,
+                        "type": "`$INTEGER`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot",
+                        "orig": "screenshot",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot_code_scheme",
+                        "orig": "screenshot_code_scheme",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot_element",
+                        "orig": "screenshot_element",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot_full_page",
+                        "orig": "screenshot_full_page",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot_omit_background",
+                        "orig": "screenshot_omit_background",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot_overlay",
+                        "orig": "screenshot_overlay",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "screenshot_type",
+                        "orig": "screenshot_type",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "script",
+                        "orig": "script",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "scroll",
+                        "orig": "scroll",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "stale_ttl",
+                        "orig": "stale_ttl",
+                        "reqd": false,
+                        "type": "`$INTEGER`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "style",
+                        "orig": "style",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "technology",
+                        "orig": "technology",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "timeout",
+                        "orig": "timeout",
+                        "reqd": false,
+                        "type": "`$INTEGER`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "ttl",
+                        "orig": "ttl",
+                        "reqd": false,
+                        "type": "`$INTEGER`",
+                        "active": true
+                      },
+                      {
+                        "example": "https://github.com/microlinkhq",
+                        "kind": "query",
+                        "name": "url",
+                        "orig": "url",
+                        "reqd": true,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "video",
+                        "orig": "video",
+                        "reqd": false,
+                        "type": "`$BOOLEAN`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "viewport",
+                        "orig": "viewport",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "wait_for_selector",
+                        "orig": "wait_for_selector",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "wait_for_timeout",
+                        "orig": "wait_for_timeout",
+                        "reqd": false,
+                        "type": "`$INTEGER`",
+                        "active": true
+                      },
+                      {
+                        "kind": "query",
+                        "name": "wait_until",
+                        "orig": "wait_until",
+                        "reqd": false,
+                        "type": "`$STRING`",
+                        "active": true
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/",
+                  "select": {
+                    "exist": [
+                      "adblock",
+                      "animation",
+                      "audio",
+                      "click",
+                      "color_scheme",
+                      "data",
+                      "device",
+                      "embed",
+                      "filename",
+                      "filter",
+                      "force",
+                      "function",
+                      "header",
+                      "iframe",
+                      "insight",
+                      "javascript",
+                      "lighthouses",
+                      "media_type",
+                      "meta",
+                      "module",
+                      "palette",
+                      "pdf",
+                      "pdf_format",
+                      "pdf_height",
+                      "pdf_landscape",
+                      "pdf_margin",
+                      "pdf_page_range",
+                      "pdf_scale",
+                      "pdf_width",
+                      "ping",
+                      "prerender",
+                      "proxy",
+                      "retry",
+                      "screenshot",
+                      "screenshot_code_scheme",
+                      "screenshot_element",
+                      "screenshot_full_page",
+                      "screenshot_omit_background",
+                      "screenshot_overlay",
+                      "screenshot_type",
+                      "script",
+                      "scroll",
+                      "stale_ttl",
+                      "style",
+                      "technology",
+                      "timeout",
+                      "ttl",
+                      "url",
+                      "video",
+                      "viewport",
+                      "wait_for_selector",
+                      "wait_for_timeout",
+                      "wait_until"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "parts": []
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "name": "test",
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1",
+          "active": true,
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            }
+          },
+          "target": {
+            "ts": {
+              "deps": {}
+            },
+            "go": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            }
+          }
+        }
+      },
+      "flow": {
+        "BasicGetWebsiteDataFlow": {
+          "entity": "get_website_data",
+          "kind": "basic",
+          "name": "BasicGetWebsiteDataFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "get_website_data_ref01",
+                "srcdatavar": "get_website_data_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-get_website_data_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicGetWebsiteDataFlow",
+          "active": true,
+          "param": {}
+        }
+      },
+      "target": {
+        "ts": {
+          "title": "TypeScript",
+          "ext": "ts",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "microlink"
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "deps": {
+            "dotenv": {
+              "active": true,
+              "version": "^17.4.2",
+              "kind": "dev"
+            },
+            "typescript": {
+              "active": true,
+              "version": "^5.9.3",
+              "kind": "dev"
+            },
+            "@types/node": {
+              "active": true,
+              "version": "^25.6.0",
+              "kind": "dev"
+            }
+          },
+          "name": "ts",
+          "active": true
+        },
+        "go": {
+          "title": "Golang",
+          "ext": "go",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "microlink"
+          },
+          "srcfeature": false,
+          "deps": {
+            "github.com/voxgig/struct": {
+              "active": true,
+              "version": "v0.0.0",
+              "replace": "./utility/struct",
+              "kind": "prod"
+            }
+          },
+          "name": "go",
+          "active": true
+        },
+        "lua": {
+          "title": "Lua",
+          "ext": "lua",
+          "comment": {
+            "line": "--"
+          },
+          "module": {
+            "name": "microlink"
+          },
+          "srcfeature": false,
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "version": "2.5",
+              "kind": "prod"
+            }
+          },
+          "name": "lua",
+          "active": true
+        },
+        "php": {
+          "title": "PHP",
+          "ext": "php",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "microlink"
+          },
+          "srcfeature": false,
+          "deps": {},
+          "name": "php",
+          "active": true
+        },
+        "py": {
+          "title": "Python",
+          "ext": "py",
+          "comment": {
+            "line": "#"
+          },
+          "module": {
+            "name": "microlink"
+          },
+          "srcfeature": false,
+          "deps": {
+            "requests": {
+              "active": true,
+              "version": "2.33",
+              "kind": "prod"
+            }
+          },
+          "name": "py",
+          "active": true
+        },
+        "rb": {
+          "title": "Ruby",
+          "ext": "rb",
+          "comment": {
+            "line": "#"
+          },
+          "module": {
+            "name": "microlink"
+          },
+          "srcfeature": false,
+          "deps": {
+            "voxgig-struct": {
+              "active": true,
+              "version": "0.0.10",
+              "kind": "prod"
+            },
+            "json": {
+              "active": true,
+              "version": "0",
+              "kind": "prod"
+            }
+          },
+          "name": "rb",
+          "active": true
+        }
+      },
+      "option": {}
+    },
+    "def": {
+      "desc": ""
+    },
+    "api": {
+      "guide": {},
+      "entity": {}
+    }
+  },
+  "name__orig": "microlink",
+  "Name": "Microlink",
+  "name_": "microlink",
+  "name-": "microlink",
+  "NAME": "MICROLINK"
+}

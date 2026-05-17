@@ -139,8 +139,8 @@ main: kit: entity: get_website_data: {
               }
               {
                 kind: "query"
-                name: "lighthouses"
-                orig: "lighthouses"
+                name: "lighthouse"
+                orig: "lighthouse"
                 reqd: false
                 type: "`$BOOLEAN`"
               }
@@ -419,7 +419,7 @@ main: kit: entity: get_website_data: {
               "iframe"
               "insight"
               "javascript"
-              "lighthouses"
+              "lighthouse"
               "media_type"
               "meta"
               "module"

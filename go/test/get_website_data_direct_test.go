@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/microlink-sdk"
-	"github.com/voxgig-sdk/microlink-sdk/core"
+	sdk "github.com/voxgig-sdk/microlink-sdk/go"
+	"github.com/voxgig-sdk/microlink-sdk/go/core"
 )
 
 func TestGetWebsiteDataDirect(t *testing.T) {

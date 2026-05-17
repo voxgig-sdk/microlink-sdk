@@ -211,8 +211,8 @@ class Config {
                   },
                   {
                     "kind": "query",
-                    "name": "lighthouses",
-                    "orig": "lighthouses",
+                    "name": "lighthouse",
+                    "orig": "lighthouse",
                     "reqd": false,
                     "type": "`$BOOLEAN`",
                     "active": true
@@ -528,7 +528,7 @@ class Config {
                   "iframe",
                   "insight",
                   "javascript",
-                  "lighthouses",
+                  "lighthouse",
                   "media_type",
                   "meta",
                   "module",

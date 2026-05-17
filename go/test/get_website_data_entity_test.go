@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/microlink-sdk"
-	"github.com/voxgig-sdk/microlink-sdk/core"
+	sdk "github.com/voxgig-sdk/microlink-sdk/go"
+	"github.com/voxgig-sdk/microlink-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/microlink-sdk/go/utility/struct"
 )
 
 func TestGetWebsiteDataEntity(t *testing.T) {

@@ -3,15 +3,18 @@
     "get_website_data": {
       "GET_WEBSITE_DATA00": {
         "data": {},
-        "status": "s15"
+        "status": "s15",
+        "id": "GET_WEBSITE_DATA00"
       },
       "GET_WEBSITE_DATA01": {
         "data": {},
-        "status": "s29"
+        "status": "s29",
+        "id": "GET_WEBSITE_DATA01"
       },
       "GET_WEBSITE_DATA02": {
         "data": {},
-        "status": "s3d"
+        "status": "s3d",
+        "id": "GET_WEBSITE_DATA02"
       }
     }
   },

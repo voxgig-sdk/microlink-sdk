@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/microlink-sdk/core"
+	"github.com/voxgig-sdk/microlink-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/microlink-sdk/go/utility/struct"
 )
 
 type GetWebsiteDataEntity struct {

@@ -20,9 +20,6 @@ class MicrolinkConfig
             ],
             "options" => [
                 "base" => "https://api.microlink.io",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

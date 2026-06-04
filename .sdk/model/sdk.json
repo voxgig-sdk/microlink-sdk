@@ -17,7 +17,15 @@
           }
         ],
         "title": "Microlink API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Turn any URL into structured data, screenshots, PDFs, or color palettes via a single browser-automation API",
+        "homepage": "https://microlink.io",
+        "docs_url": "https://microlink.io/docs/api/getting-started/overview",
+        "about_md": "[Microlink](https://microlink.io) is a browser-automation API that converts any URL into structured output. A single GET request to `https://api.microlink.io/?url=...` drives a headless browser on the server side and returns JSON describing the page.\n\nWhat you get from the API:\n\n- **Metadata** — normalized title, description, author, publication date, logo, and representative images for a URL\n- **Screenshots** — pixel-perfect captures of any webpage\n- **PDFs** — rendered PDFs of live webpages\n- **Color palettes** — predominant colors extracted from detected images\n- **Embeds** — rich embeddable cards built from URL metadata\n- **Technology detection** — frameworks and tools powering a site\n- **Pre-rendering** — access to client-side rendered content\n\nThe API speaks plain HTTP with URL query parameters and returns JSON, so any HTTP client works; the docs show examples in cURL, JavaScript, Python, Ruby, PHP, and Go. An API key is used for authenticated/paid usage; specific rate limits and pricing tiers are published on the Microlink site.",
+        "entity_desc": {
+          "get_website_data": "Fetch structured data about a target URL via `GET /?url=<target>` — returns normalized metadata and, depending on parameters, screenshots, PDFs, or color palettes."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +33,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "get_website_data": {

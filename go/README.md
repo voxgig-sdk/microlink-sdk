@@ -28,16 +28,13 @@ package main
 
 import (
     "fmt"
-    "os"
 
     sdk "github.com/voxgig-sdk/microlink-sdk/go"
     "github.com/voxgig-sdk/microlink-sdk/go/core"
 )
 
 func main() {
-    client := sdk.NewMicrolinkSDK(map[string]any{
-        "apikey": os.Getenv("MICROLINK_APIKEY"),
-    })
+    client := sdk.NewMicrolinkSDK(map[string]any{})
 ```
 
 ### 3. Load a getwebsitedata
@@ -140,7 +137,6 @@ Create a `.env.local` file at the project root:
 
 ```
 MICROLINK_TEST_LIVE=TRUE
-MICROLINK_APIKEY=<your-key>
 ```
 
 Then run:
@@ -162,7 +158,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `"apikey"` | `string` | API key for authentication. |
 | `"base"` | `string` | Base URL of the API server. |
 | `"prefix"` | `string` | URL path prefix prepended to all requests. |
 | `"suffix"` | `string` | URL path suffix appended to all requests. |

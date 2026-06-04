@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'MICROLINK_TEST_GET_WEBSITE_DATA_ENTID': idmap,
     'MICROLINK_TEST_LIVE': 'FALSE',
     'MICROLINK_TEST_EXPLAIN': 'FALSE',
-    'MICROLINK_APIKEY': 'NONE',
   })
 
   idmap = env['MICROLINK_TEST_GET_WEBSITE_DATA_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new MicrolinkSDK(merge([
       {
-        apikey: env.MICROLINK_APIKEY,
       },
       extra
     ]))

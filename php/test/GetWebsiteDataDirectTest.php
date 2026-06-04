@@ -73,14 +73,12 @@ function get_website_data_direct_setup($mockres)
     $env = Runner::env_override([
         "MICROLINK_TEST_GET_WEBSITE_DATA_ENTID" => [],
         "MICROLINK_TEST_LIVE" => "FALSE",
-        "MICROLINK_APIKEY" => "NONE",
     ]);
 
     $live = $env["MICROLINK_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["MICROLINK_APIKEY"],
         ];
         $client = new MicrolinkSDK($merged_opts);
         return [

@@ -105,14 +105,12 @@ func get_website_dataDirectSetup(mockres any) *get_website_dataDirectSetupResult
 	env := envOverride(map[string]any{
 		"MICROLINK_TEST_GET_WEBSITE_DATA_ENTID": map[string]any{},
 		"MICROLINK_TEST_LIVE":    "FALSE",
-		"MICROLINK_APIKEY":       "NONE",
 	})
 
 	live := env["MICROLINK_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["MICROLINK_APIKEY"],
 		}
 		client := sdk.NewMicrolinkSDK(mergedOpts)
 

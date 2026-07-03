@@ -1,6 +1,11 @@
 # Microlink TypeScript SDK
 
-The TypeScript SDK for the Microlink API. Provides a type-safe, entity-oriented interface with full async/await support.
+
+
+The TypeScript SDK for the Microlink API — a type-safe, entity-oriented client with full async/await support.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -17,7 +22,9 @@ loading a specific record.
 ```ts
 import { MicrolinkSDK } from 'microlink'
 
-const client = new MicrolinkSDK({})
+const client = new MicrolinkSDK({
+  apikey: process.env.MICROLINK_APIKEY,
+})
 ```
 
 ### 3. Load a getwebsitedata
@@ -80,7 +87,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new MicrolinkSDK()
+const client = new MicrolinkSDK({ apikey: '...' })
 const testClient = client.tester()
 ```
 
@@ -116,6 +123,7 @@ const logger = {
 }
 
 const client = new MicrolinkSDK({
+  apikey: '...',
   extend: [logger],
 })
 ```
@@ -126,6 +134,7 @@ Create a `.env.local` file at the project root:
 
 ```
 MICROLINK_TEST_LIVE=TRUE
+MICROLINK_APIKEY=<your-key>
 ```
 
 Then run:
@@ -143,6 +152,7 @@ cd ts && npm test
 
 ```ts
 new MicrolinkSDK(options?: {
+  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -153,6 +163,7 @@ new MicrolinkSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

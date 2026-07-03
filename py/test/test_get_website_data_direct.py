@@ -64,12 +64,14 @@ def _get_website_data_direct_setup(mockres):
     env = runner.env_override({
         "MICROLINK_TEST_GET_WEBSITE_DATA_ENTID": {},
         "MICROLINK_TEST_LIVE": "FALSE",
+        "MICROLINK_APIKEY": "NONE",
     })
 
     live = env.get("MICROLINK_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("MICROLINK_APIKEY"),
         }
         client = MicrolinkSDK(merged_opts)
         return {

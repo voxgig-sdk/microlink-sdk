@@ -1,24 +1,8 @@
 # Microlink SDK
 
-Turn any URL into structured data, screenshots, PDFs, or color palettes via a single browser-automation API
+Microlink API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Microlink API
-
-[Microlink](https://microlink.io) is a browser-automation API that converts any URL into structured output. A single GET request to `https://api.microlink.io/?url=...` drives a headless browser on the server side and returns JSON describing the page.
-
-What you get from the API:
-
-- **Metadata** — normalized title, description, author, publication date, logo, and representative images for a URL
-- **Screenshots** — pixel-perfect captures of any webpage
-- **PDFs** — rendered PDFs of live webpages
-- **Color palettes** — predominant colors extracted from detected images
-- **Embeds** — rich embeddable cards built from URL metadata
-- **Technology detection** — frameworks and tools powering a site
-- **Pre-rendering** — access to client-side rendered content
-
-The API speaks plain HTTP with URL query parameters and returns JSON, so any HTTP client works; the docs show examples in cURL, JavaScript, Python, Ruby, PHP, and Go. An API key is used for authenticated/paid usage; specific rate limits and pricing tiers are published on the Microlink site.
 
 ## Try it
 
@@ -52,27 +36,31 @@ gem install microlink-sdk
 luarocks install microlink-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { MicrolinkSDK } from 'microlink'
 
-const client = new MicrolinkSDK({})
+const client = new MicrolinkSDK({
+  apikey: process.env.MICROLINK_APIKEY,
+})
 
+// Load getwebsitedata data
+const getwebsitedata = await client.GetWebsiteData().load({})
+console.log(getwebsitedata.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -102,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **GetWebsiteData** | Fetch structured data about a target URL via `GET /?url=<target>` — returns normalized metadata and, depending on parameters, screenshots, PDFs, or color palettes. | `/` |
+| **GetWebsiteData** |  | `/` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from microlink_sdk import MicrolinkSDK
 
-client = MicrolinkSDK({})
+client = MicrolinkSDK({
+    "apikey": os.environ.get("MICROLINK_APIKEY"),
+})
 
 
 # Load a specific getwebsitedata
-getwebsitedata, err = client.GetWebsiteData(None).load(
-    {"id": "example_id"}, None
-)
+getwebsitedata, err = client.GetWebsiteData().load({"id": "example_id"})
+print(getwebsitedata)
 ```
 
 ### PHP
@@ -129,13 +119,14 @@ getwebsitedata, err = client.GetWebsiteData(None).load(
 <?php
 require_once 'microlink_sdk.php';
 
-$client = new MicrolinkSDK([]);
+$client = new MicrolinkSDK([
+    "apikey" => getenv("MICROLINK_APIKEY"),
+]);
 
 
 // Load a specific getwebsitedata
-[$getwebsitedata, $err] = $client->GetWebsiteData(null)->load(
-    ["id" => "example_id"], null
-);
+[$getwebsitedata, $err] = $client->GetWebsiteData()->load(["id" => "example_id"]);
+print_r($getwebsitedata);
 ```
 
 ### Golang
@@ -143,8 +134,13 @@ $client = new MicrolinkSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/microlink-sdk/go"
 
-client := sdk.NewMicrolinkSDK(map[string]any{})
+client := sdk.NewMicrolinkSDK(map[string]any{
+    "apikey": os.Getenv("MICROLINK_APIKEY"),
+})
 
+// Load getwebsitedata data
+getwebsitedata, err := client.GetWebsiteData(nil).Load(map[string]any{}, nil)
+fmt.Println(getwebsitedata)
 ```
 
 ### Ruby
@@ -152,13 +148,14 @@ client := sdk.NewMicrolinkSDK(map[string]any{})
 ```ruby
 require_relative "Microlink_sdk"
 
-client = MicrolinkSDK.new({})
+client = MicrolinkSDK.new({
+  "apikey" => ENV["MICROLINK_APIKEY"],
+})
 
 
 # Load a specific getwebsitedata
-getwebsitedata, err = client.GetWebsiteData(nil).load(
-  { "id" => "example_id" }, nil
-)
+getwebsitedata, err = client.GetWebsiteData().load({ "id" => "example_id" })
+puts getwebsitedata
 ```
 
 ### Lua
@@ -166,13 +163,14 @@ getwebsitedata, err = client.GetWebsiteData(nil).load(
 ```lua
 local sdk = require("microlink_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("MICROLINK_APIKEY"),
+})
 
 
 -- Load a specific getwebsitedata
-local getwebsitedata, err = client:GetWebsiteData(nil):load(
-  { id = "example_id" }, nil
-)
+local getwebsitedata, err = client:GetWebsiteData():load({ id = "example_id" })
+print(getwebsitedata)
 ```
 
 ## Unit testing in offline mode
@@ -191,25 +189,21 @@ const result = await client.GetWebsiteData().load({ id: 'test01' })
 ### Python
 
 ```python
-client = MicrolinkSDK.test(None, None)
-result, err = client.GetWebsiteData(None).load(
-    {"id": "test01"}, None
-)
+client = MicrolinkSDK.test()
+result, err = client.GetWebsiteData().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = MicrolinkSDK::test(null, null);
-[$result, $err] = $client->GetWebsiteData(null)->load(
-    ["id" => "test01"], null
-);
+$client = MicrolinkSDK::test();
+[$result, $err] = $client->GetWebsiteData()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.GetWebsiteData(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -218,19 +212,15 @@ result, err := client.GetWebsiteData(nil).Load(
 ### Ruby
 
 ```ruby
-client = MicrolinkSDK.test(nil, nil)
-result, err = client.GetWebsiteData(nil).load(
-  { "id" => "test01" }, nil
-)
+client = MicrolinkSDK.test
+result, err = client.GetWebsiteData().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:GetWebsiteData(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:GetWebsiteData():load({ id = "test01" })
 ```
 
 ## How it works
@@ -334,11 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Microlink API
-
-- Upstream: [https://microlink.io](https://microlink.io)
-- API docs: [https://microlink.io/docs/api/getting-started/overview](https://microlink.io/docs/api/getting-started/overview)
 
 ---
 

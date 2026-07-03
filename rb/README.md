@@ -10,13 +10,13 @@ The Ruby SDK for the Microlink API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install microlink-sdk
+gem install voxgig-sdk-microlink
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "microlink-sdk"
+gem "voxgig-sdk-microlink"
 ```
 
 Then run:

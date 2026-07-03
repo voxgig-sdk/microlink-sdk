@@ -10,7 +10,7 @@ The Lua SDK for the Microlink API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install microlink-sdk
+luarocks install voxgig-sdk-microlink
 ```
 
 If the module is not yet published, add the source directory to

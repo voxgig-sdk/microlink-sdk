@@ -10,7 +10,7 @@ The Python SDK for the Microlink API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install microlink-sdk
+pip install voxgig-sdk-microlink
 ```
 
 Or install from source:

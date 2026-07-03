@@ -1,7 +1,23 @@
 {
   "name": "@voxgig-sdk/microlink",
   "version": "0.0.1",
-  "description": "DESCRIPTION",
+  "description": "Unofficial generated TypeScript SDK for the Microlink public API. Not affiliated with or endorsed by the upstream API provider.",
+  "keywords": [
+    "voxgig",
+    "sdk",
+    "generated-sdk",
+    "openapi",
+    "api-client",
+    "microlink"
+  ],
+  "homepage": "https://github.com/voxgig-sdk/microlink-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxgig-sdk/microlink-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voxgig-sdk/microlink-sdk/issues"
+  },
   "main": "dist/MicrolinkSDK.js",
   "type": "commonjs",
   "types": "dist/MicrolinkSDK.d.ts",
@@ -14,7 +30,10 @@
     "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "reset": "npm run clean && npm i && npm run build && npm test"
   },
-  "author": "Microlink",
+  "author": {
+    "name": "Voxgig",
+    "url": "https://voxgig.com"
+  },
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {},

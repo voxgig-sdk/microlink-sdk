@@ -10,7 +10,7 @@ The TypeScript SDK for the Microlink API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install microlink
+npm install @voxgig-sdk/microlink
 ```
 ## Tutorial: your first API call
 

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch GetWebsiteDataLoadMatch
+---@param ctrl? table
+---@return GetWebsiteData
+---@return string? err
 function GetWebsiteDataEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

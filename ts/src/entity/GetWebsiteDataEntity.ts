@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  GetWebsiteData,
+  GetWebsiteDataLoadMatch,
+} from '../MicrolinkTypes'
 
 // TODO: needs Entity superclass
-class GetWebsiteDataEntity extends MicrolinkEntityBase {
+class GetWebsiteDataEntity extends MicrolinkEntityBase<GetWebsiteData> {
 
   constructor(client: MicrolinkSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class GetWebsiteDataEntity extends MicrolinkEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: GetWebsiteDataLoadMatch, ctrl?: Control): Promise<GetWebsiteData> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class GetWebsiteDataEntity extends MicrolinkEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<GetWebsiteData> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

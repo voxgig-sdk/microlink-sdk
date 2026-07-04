@@ -91,7 +91,6 @@ function get_website_data_basic_setup(extra)
     ["MICROLINK_TEST_GET_WEBSITE_DATA_ENTID"] = idmap,
     ["MICROLINK_TEST_LIVE"] = "FALSE",
     ["MICROLINK_TEST_EXPLAIN"] = "FALSE",
-    ["MICROLINK_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ function get_website_data_basic_setup(extra)
   if env["MICROLINK_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["MICROLINK_APIKEY"],
       },
       extra or {},
     })

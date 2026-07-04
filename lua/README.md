@@ -9,12 +9,9 @@ The Lua SDK for the Microlink API — an entity-oriented client using Lua conven
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-microlink
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/microlink-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("microlink_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("MICROLINK_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 3. Load a getwebsitedata
 
 ```lua
-local result, err = client:GetWebsiteData():load({ id = "example_id" })
+local result, err = client:getwebsitedata():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -87,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Microlink():load({ id = "test01" })
+local result, err = client:getwebsitedata():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -121,7 +116,6 @@ Create a `.env.local` file at the project root:
 
 ```
 MICROLINK_TEST_LIVE=TRUE
-MICROLINK_APIKEY=<your-key>
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -222,7 +215,7 @@ API path: `/`
 
 ### GetWebsiteData
 
-Create an instance: `const get_website_data = client.GetWebsiteData()`
+Create an instance: `const get_website_data = client.get_website_data`
 
 #### Operations
 
@@ -240,7 +233,7 @@ Create an instance: `const get_website_data = client.GetWebsiteData()`
 #### Example: Load
 
 ```ts
-const get_website_data = await client.GetWebsiteData().load({ id: 'get_website_data_id' })
+const get_website_data = await client.get_website_data.load({ id: 'get_website_data_id' })
 ```
 
 
@@ -315,11 +308,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local getwebsitedata = client:getwebsitedata()
+getwebsitedata:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- getwebsitedata:data_get() now returns the loaded getwebsitedata data
+-- getwebsitedata:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

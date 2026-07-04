@@ -245,6 +245,9 @@ func (sdk *MicrolinkSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// GetWebsiteData returns a GetWebsiteData entity bound to this client.
+// Idiomatic usage: client.GetWebsiteData(nil).List(nil, nil) or
+// client.GetWebsiteData(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MicrolinkSDK) GetWebsiteData(data map[string]any) MicrolinkEntity {
 	return NewGetWebsiteDataEntityFunc(sdk, data)
 }

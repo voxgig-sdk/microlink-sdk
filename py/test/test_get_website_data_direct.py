@@ -25,7 +25,7 @@ class TestGetWebsiteDataDirect:
         if setup["live"]:
             query["url"] = "https://github.com/microlinkhq"
 
-        result, err = client.direct({
+        result = client.direct({
             "path": "",
             "method": "GET",
             "params": params,
@@ -35,8 +35,8 @@ class TestGetWebsiteDataDirect:
             # Live mode is lenient: synthetic IDs frequently 4xx. Skip
             # rather than fail when the load endpoint isn't reachable
             # with the IDs we can construct from setup.idmap.
-            if err is not None:
-                pytest.skip(f"load call failed (likely synthetic IDs against live API): {err}")
+            if result.get("err") is not None:
+                pytest.skip(f"load call failed (likely synthetic IDs against live API): {result.get('err')}")
                 return
             if not result.get("ok"):
                 pytest.skip("load call not ok (likely synthetic IDs against live API)")
@@ -46,7 +46,6 @@ class TestGetWebsiteDataDirect:
                 pytest.skip(f"expected 2xx status, got {status}")
                 return
         else:
-            assert err is None
             assert result["ok"] is True
             assert helpers.to_int(result["status"]) == 200
             assert result["data"] is not None
@@ -64,14 +63,12 @@ def _get_website_data_direct_setup(mockres):
     env = runner.env_override({
         "MICROLINK_TEST_GET_WEBSITE_DATA_ENTID": {},
         "MICROLINK_TEST_LIVE": "FALSE",
-        "MICROLINK_APIKEY": "NONE",
     })
 
     live = env.get("MICROLINK_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("MICROLINK_APIKEY"),
         }
         client = MicrolinkSDK(merged_opts)
         return {

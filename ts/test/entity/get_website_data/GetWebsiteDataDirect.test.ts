@@ -78,14 +78,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'MICROLINK_TEST_GET_WEBSITE_DATA_ENTID': {},
     'MICROLINK_TEST_LIVE': 'FALSE',
-    'MICROLINK_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.MICROLINK_TEST_LIVE
 
   if (live) {
     const client = new MicrolinkSDK({
-      apikey: env.MICROLINK_APIKEY,
     })
 
     let idmap: any = env['MICROLINK_TEST_GET_WEBSITE_DATA_ENTID']

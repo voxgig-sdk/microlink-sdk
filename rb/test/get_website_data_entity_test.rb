@@ -42,8 +42,7 @@ class GetWebsiteDataEntityTest < Minitest::Test
     # LOAD
     get_website_data_ref01_ent = client.GetWebsiteData(nil)
     get_website_data_ref01_match_dt0 = {}
-    get_website_data_ref01_data_dt0_loaded, err = get_website_data_ref01_ent.load(get_website_data_ref01_match_dt0, nil)
-    assert_nil err
+    get_website_data_ref01_data_dt0_loaded = get_website_data_ref01_ent.load(get_website_data_ref01_match_dt0, nil)
     assert !get_website_data_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def get_website_data_basic_setup(extra)
     "MICROLINK_TEST_GET_WEBSITE_DATA_ENTID" => idmap,
     "MICROLINK_TEST_LIVE" => "FALSE",
     "MICROLINK_TEST_EXPLAIN" => "FALSE",
-    "MICROLINK_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def get_website_data_basic_setup(extra)
   if env["MICROLINK_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["MICROLINK_APIKEY"],
       },
       extra || {},
     ])

@@ -45,6 +45,7 @@ class GetWebsiteDataEntity
     end
   end
 
+  # @return [GetWebsiteData, Hash] the current GetWebsiteData data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class GetWebsiteDataEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of GetWebsiteData fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single GetWebsiteData.
+  #
+  # @param reqmatch [GetWebsiteDataLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [GetWebsiteData, Hash] the loaded GetWebsiteData; raises MicrolinkError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

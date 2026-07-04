@@ -2,6 +2,8 @@
 
 import { GetWebsiteDataEntity } from './entity/GetWebsiteDataEntity'
 
+export type * from './MicrolinkTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class MicrolinkSDK {
 
 
 
+  _get_website_data?: GetWebsiteDataEntity
+
+  // Idiomatic facade: `client.get_website_data.list()` / `client.get_website_data.load({ id })`.
+  get get_website_data(): GetWebsiteDataEntity {
+    return (this._get_website_data ??= new GetWebsiteDataEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.get_website_data` instead. */
   GetWebsiteData(data?: any) {
     const self = this
     return new GetWebsiteDataEntity(self,data)

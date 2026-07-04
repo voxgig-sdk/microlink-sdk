@@ -220,25 +220,15 @@ class MicrolinkSDK:
         }
 
 
-    @property
-    def get_website_data(self):
-        """Idiomatic facade: client.get_website_data.list() / client.get_website_data.load({"id": ...})."""
-        from entity.get_website_data_entity import GetWebsiteDataEntity
-        cached = getattr(self, "_get_website_data", None)
-        if cached is None:
-            cached = GetWebsiteDataEntity(self, None)
-            self._get_website_data = cached
-        return cached
-
-    def GetWebsiteData(self, data=None):
-        # Deprecated: use client.get_website_data instead.
+    def GetWebsiteData(self, data=None) -> "GetWebsiteDataEntity":
+        """Entity factory: client.GetWebsiteData().list({}) / client.GetWebsiteData().load({"id": ...})."""
         from entity.get_website_data_entity import GetWebsiteDataEntity
         return GetWebsiteDataEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "MicrolinkSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class MicrolinkSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.get_website_data_entity import GetWebsiteDataEntity

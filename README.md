@@ -26,9 +26,9 @@ import { MicrolinkSDK } from '@voxgig-sdk/microlink'
 
 const client = new MicrolinkSDK()
 
-// Load getwebsitedata data
-const getwebsitedata = await client.getwebsitedata.load({})
-console.log(getwebsitedata.data)
+// Load getwebsitedata data (returns a GetWebsiteData)
+const getwebsitedata = await client.GetWebsiteData().load()
+console.log(getwebsitedata)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from microlink_sdk import MicrolinkSDK
 client = MicrolinkSDK()
 
 
-# Load a specific getwebsitedata
-getwebsitedata = client.getwebsitedata.load({"id": "example_id"})
+# Load a specific getwebsitedata (returns the record, raises on error)
+getwebsitedata = client.GetWebsiteData().load({"id": "example_id"})
 print(getwebsitedata)
 ```
 
@@ -98,8 +98,8 @@ require_once 'microlink_sdk.php';
 $client = new MicrolinkSDK();
 
 
-// Load a specific getwebsitedata
-$getwebsitedata = $client->getwebsitedata()->load(["id" => "example_id"]);
+// Load a specific getwebsitedata (returns the bare record; throws on error)
+$getwebsitedata = $client->GetWebsiteData()->load(["id" => "example_id"]);
 print_r($getwebsitedata);
 ```
 
@@ -123,8 +123,8 @@ require_relative "Microlink_sdk"
 client = MicrolinkSDK.new
 
 
-# Load a specific getwebsitedata
-getwebsitedata = client.getwebsitedata.load({ "id" => "example_id" })
+# Load a specific getwebsitedata (returns the bare record; raises on error)
+getwebsitedata = client.GetWebsiteData.load({ "id" => "example_id" })
 puts getwebsitedata
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific getwebsitedata
-local getwebsitedata, err = client:getwebsitedata():load({ id = "example_id" })
+local getwebsitedata, err = client:GetWebsiteData():load({ id = "example_id" })
 print(getwebsitedata)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = MicrolinkSDK.test()
-const result = await client.getwebsitedata.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const getwebsitedata = await client.GetWebsiteData().load({ id: 'test01' })
+// getwebsitedata is a bare GetWebsiteData populated with mock data
+console.log(getwebsitedata)
 ```
 
 ### Python
 
 ```python
 client = MicrolinkSDK.test()
-result = client.getwebsitedata.load({"id": "test01"})
+getwebsitedata = client.GetWebsiteData().load({"id": "test01"})
+print(getwebsitedata)
 ```
 
 ### PHP
 
 ```php
-$client = MicrolinkSDK::test();
-$result = $client->getwebsitedata()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = MicrolinkSDK::test([
+    "entity" => ["getwebsitedata" => ["test01" => ["id" => "test01"]]],
+]);
+$getwebsitedata = $client->GetWebsiteData()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.GetWebsiteData(nil).Load(
 ### Ruby
 
 ```ruby
-client = MicrolinkSDK.test
-result = client.getwebsitedata.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = MicrolinkSDK.test({
+  "entity" => { "getwebsitedata" => { "test01" => { "id" => "test01" } } },
+})
+getwebsitedata = client.GetWebsiteData.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:getwebsitedata():load({ id = "test01" })
+local result, err = client:GetWebsiteData():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

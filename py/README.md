@@ -33,10 +33,12 @@ client = MicrolinkSDK()
 
 ### 3. Load a getwebsitedata
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.getwebsitedata.load({"id": "example_id"})
-    print(result)
+    getwebsitedata = client.GetWebsiteData().load({"id": "example_id"})
+    print(getwebsitedata)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MicrolinkSDK.test()
 
-result = client.getwebsitedata.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+getwebsitedata = client.GetWebsiteData().load({"id": "test01"})
+# getwebsitedata contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -219,7 +222,7 @@ API path: `/`
 
 ### GetWebsiteData
 
-Create an instance: `const get_website_data = client.get_website_data`
+Create an instance: `get_website_data = client.GetWebsiteData()`
 
 #### Operations
 
@@ -236,8 +239,8 @@ Create an instance: `const get_website_data = client.get_website_data`
 
 #### Example: Load
 
-```ts
-const get_website_data = await client.get_website_data.load({ id: 'get_website_data_id' })
+```python
+get_website_data = client.GetWebsiteData().load({"id": "get_website_data_id"})
 ```
 
 
@@ -311,7 +314,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-getwebsitedata = client.getwebsitedata
+getwebsitedata = client.GetWebsiteData()
 getwebsitedata.load({"id": "example_id"})
 
 # getwebsitedata.data_get() now returns the loaded getwebsitedata data

@@ -109,7 +109,7 @@ Alias for `MicrolinkSDK.test()`.
 ## GetWebsiteDataEntity
 
 ```ts
-const get_website_data = client.get_website_data
+const get_website_data = client.GetWebsiteData()
 ```
 
 ### Fields
@@ -126,7 +126,7 @@ const get_website_data = client.get_website_data
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.get_website_data.load({ id: 'get_website_data_id' })
+const result = await client.GetWebsiteData().load({ id: 'get_website_data_id' })
 ```
 
 ### Common Methods

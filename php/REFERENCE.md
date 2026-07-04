@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## GetWebsiteDataEntity
 
 ```php
-$get_website_data = $client->get_website_data();
+$get_website_data = $client->GetWebsiteData();
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ $get_website_data = $client->get_website_data();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->get_website_data()->load(["id" => "get_website_data_id"]);
+$result = $client->GetWebsiteData()->load(["id" => "get_website_data_id"]);
 ```
 
 ### Common Methods

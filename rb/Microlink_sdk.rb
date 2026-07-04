@@ -208,13 +208,7 @@ class MicrolinkSDK
   end
 
 
-  # Idiomatic facade: client.get_website_data.list / client.get_website_data.load({ "id" => ... })
-  def get_website_data
-    require_relative 'entity/get_website_data_entity'
-    @get_website_data ||= GetWebsiteDataEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.get_website_data instead.
+  # Canonical facade: client.GetWebsiteData.list / client.GetWebsiteData.load({ "id" => ... })
   def GetWebsiteData(data = nil)
     require_relative 'entity/get_website_data_entity'
     GetWebsiteDataEntity.new(self, data)

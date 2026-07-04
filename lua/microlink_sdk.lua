@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:get_website_data():list() / client:get_website_data():load({ id = ... })
-function MicrolinkSDK:get_website_data(data)
+-- Idiomatic facade: client:GetWebsiteData():list() / client:GetWebsiteData():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function MicrolinkSDK:GetWebsiteData(data)
   local EntityMod = require("entity.get_website_data_entity")
   if data == nil then
     if self._get_website_data == nil then
@@ -253,12 +254,6 @@ function MicrolinkSDK:get_website_data(data)
     end
     return self._get_website_data
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:get_website_data() instead.
-function MicrolinkSDK:GetWebsiteData(data)
-  local EntityMod = require("entity.get_website_data_entity")
   return EntityMod.new(self, data)
 end
 

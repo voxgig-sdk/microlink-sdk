@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## GetWebsiteDataEntity
 
 ```ruby
-get_website_data = client.get_website_data
+get_website_data = client.GetWebsiteData
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ get_website_data = client.get_website_data
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.get_website_data.load({ "id" => "get_website_data_id" })
+result = client.GetWebsiteData.load({ "id" => "get_website_data_id" })
 ```
 
 ### Common Methods

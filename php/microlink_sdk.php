@@ -233,10 +233,10 @@ class MicrolinkSDK
 
     private $_get_website_data = null;
 
-    // Idiomatic facade: $client->get_website_data()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias GetWebsiteData() (PHP method
-    // names are case-insensitive).
-    public function get_website_data($data = null)
+    // Canonical facade: $client->GetWebsiteData()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->get_website_data()
+    // resolves here too.
+    public function GetWebsiteData($data = null)
     {
         require_once __DIR__ . '/entity/get_website_data_entity.php';
         if ($data === null) {

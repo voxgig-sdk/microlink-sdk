@@ -80,7 +80,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GetWebsiteDataEntity
 
 ```python
-get_website_data = client.get_website_data
+get_website_data = client.GetWebsiteData()
 ```
 
 ### Fields
@@ -97,7 +97,7 @@ get_website_data = client.get_website_data
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.get_website_data.load({"id": "get_website_data_id"})
+result = client.GetWebsiteData().load({"id": "get_website_data_id"})
 ```
 
 ### Common Methods

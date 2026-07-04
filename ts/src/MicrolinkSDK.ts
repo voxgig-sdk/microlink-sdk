@@ -204,14 +204,7 @@ class MicrolinkSDK {
 
 
 
-  _get_website_data?: GetWebsiteDataEntity
-
-  // Idiomatic facade: `client.get_website_data.list()` / `client.get_website_data.load({ id })`.
-  get get_website_data(): GetWebsiteDataEntity {
-    return (this._get_website_data ??= new GetWebsiteDataEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.get_website_data` instead. */
+  // Entity access: `client.GetWebsiteData().list()` / `client.GetWebsiteData().load({ id })`.
   GetWebsiteData(data?: any) {
     const self = this
     return new GetWebsiteDataEntity(self,data)

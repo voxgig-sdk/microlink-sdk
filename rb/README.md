@@ -32,8 +32,9 @@ client = MicrolinkSDK.new
 
 ```ruby
 begin
-  result = client.getwebsitedata.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare GetWebsiteData record (raises on error).
+  getwebsitedata = client.GetWebsiteData.load({ "id" => "example_id" })
+  puts getwebsitedata
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = MicrolinkSDK.test
+client = MicrolinkSDK.test({
+  "entity" => { "getwebsitedata" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.getwebsitedata.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+getwebsitedata = client.GetWebsiteData.load({ "id" => "test01" })
+puts getwebsitedata
 ```
 
 ### Use a custom fetch function
@@ -219,7 +224,7 @@ API path: `/`
 
 ### GetWebsiteData
 
-Create an instance: `const get_website_data = client.get_website_data`
+Create an instance: `get_website_data = client.GetWebsiteData`
 
 #### Operations
 
@@ -236,8 +241,9 @@ Create an instance: `const get_website_data = client.get_website_data`
 
 #### Example: Load
 
-```ts
-const get_website_data = await client.get_website_data.load({ id: 'get_website_data_id' })
+```ruby
+# load returns the bare GetWebsiteData record (raises on error).
+get_website_data = client.GetWebsiteData.load({ "id" => "get_website_data_id" })
 ```
 
 
@@ -312,7 +318,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-getwebsitedata = client.getwebsitedata
+getwebsitedata = client.GetWebsiteData
 getwebsitedata.load({ "id" => "example_id" })
 
 # getwebsitedata.data_get now returns the loaded getwebsitedata data

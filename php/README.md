@@ -33,9 +33,10 @@ $client = new MicrolinkSDK();
 
 ```php
 try {
-    $result = $client->getwebsitedata()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare GetWebsiteData record (throws on error).
+    $getwebsitedata = $client->GetWebsiteData()->load(["id" => "example_id"]);
+    print_r($getwebsitedata);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = MicrolinkSDK::test();
+$client = MicrolinkSDK::test([
+    "entity" => ["getwebsitedata" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->getwebsitedata()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$getwebsitedata = $client->GetWebsiteData()->load(["id" => "test01"]);
+print_r($getwebsitedata);
 ```
 
 ### Use a custom fetch function
@@ -224,7 +229,7 @@ API path: `/`
 
 ### GetWebsiteData
 
-Create an instance: `const get_website_data = client.get_website_data`
+Create an instance: `$get_website_data = $client->GetWebsiteData();`
 
 #### Operations
 
@@ -241,8 +246,9 @@ Create an instance: `const get_website_data = client.get_website_data`
 
 #### Example: Load
 
-```ts
-const get_website_data = await client.get_website_data.load({ id: 'get_website_data_id' })
+```php
+// load() returns the bare GetWebsiteData record (throws on error).
+$get_website_data = $client->GetWebsiteData()->load(["id" => "get_website_data_id"]);
 ```
 
 
@@ -317,7 +323,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getwebsitedata = $client->getwebsitedata();
+$getwebsitedata = $client->GetWebsiteData();
 $getwebsitedata->load(["id" => "example_id"]);
 
 // $getwebsitedata->dataGet() now returns the loaded getwebsitedata data

@@ -21,7 +21,7 @@ GetWebsiteData = Struct.new(
   keyword_init: true
 )
 
-# Match filter for GetWebsiteData#load (any subset of GetWebsiteData fields).
+# Request payload for GetWebsiteData#load.
 #
 # @!attribute [rw] data
 #   @return [Hash, nil]

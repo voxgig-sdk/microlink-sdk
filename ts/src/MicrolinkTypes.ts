@@ -10,5 +10,8 @@ export interface GetWebsiteData {
   status?: string
 }
 
-export type GetWebsiteDataLoadMatch = Partial<GetWebsiteData>
+export interface GetWebsiteDataLoadMatch {
+  data?: Record<string, any>
+  status?: string
+}
 

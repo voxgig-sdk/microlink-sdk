@@ -14,8 +14,7 @@ type GetWebsiteData struct {
 	Status *string `json:"status,omitempty"`
 }
 
-// GetWebsiteDataLoadMatch mirrors the get_website_data fields as an all-optional match
-// filter (Go analog of Partial<GetWebsiteData>).
+// GetWebsiteDataLoadMatch is the typed request payload for GetWebsiteData.LoadTyped.
 type GetWebsiteDataLoadMatch struct {
 	Data *map[string]any `json:"data,omitempty"`
 	Status *string `json:"status,omitempty"`

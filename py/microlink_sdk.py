@@ -221,7 +221,7 @@ class MicrolinkSDK:
 
 
     def GetWebsiteData(self, data=None) -> "GetWebsiteDataEntity":
-        """Entity factory: client.GetWebsiteData().list({}) / client.GetWebsiteData().load({"id": ...})."""
+        """Entity factory: client.GetWebsiteData().list() / client.GetWebsiteData().load({"id": ...})."""
         from entity.get_website_data_entity import GetWebsiteDataEntity
         return GetWebsiteDataEntity(self, data)
 

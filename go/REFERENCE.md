@@ -97,8 +97,8 @@ get_website_data := client.GetWebsiteData(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `data` | `map[string]any` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
@@ -107,7 +107,7 @@ get_website_data := client.GetWebsiteData(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.GetWebsiteData(nil).Load(map[string]any{"id": "get_website_data_id"}, nil)
+result, err := client.GetWebsiteData(nil).Load(nil, nil)
 ```
 
 ### Common Methods

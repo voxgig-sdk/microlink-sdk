@@ -90,8 +90,8 @@ local get_website_data = client:GetWebsiteData(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
@@ -100,7 +100,7 @@ local get_website_data = client:GetWebsiteData(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:GetWebsiteData():load({ id = "get_website_data_id" })
+local result, err = client:GetWebsiteData():load()
 ```
 
 ### Common Methods

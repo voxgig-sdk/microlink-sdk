@@ -116,8 +116,8 @@ const get_website_data = client.GetWebsiteData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
@@ -126,7 +126,7 @@ const get_website_data = client.GetWebsiteData()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.GetWebsiteData().load({ id: 'get_website_data_id' })
+const result = await client.GetWebsiteData().load()
 ```
 
 ### Common Methods

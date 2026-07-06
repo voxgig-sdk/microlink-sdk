@@ -11,6 +11,8 @@
 ---@field status? string
 
 ---@class GetWebsiteDataLoadMatch
+---@field data? table
+---@field status? string
 
 local M = {}
 

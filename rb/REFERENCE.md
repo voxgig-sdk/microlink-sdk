@@ -8,7 +8,7 @@ Complete API reference for the Microlink Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'microlink_sdk'
+require_relative 'Microlink_sdk'
 
 client = MicrolinkSDK.new(options)
 ```
@@ -93,8 +93,8 @@ get_website_data = client.GetWebsiteData
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `data` | `Hash` | No |  |
+| `status` | `String` | No |  |
 
 ### Operations
 
@@ -103,7 +103,7 @@ get_website_data = client.GetWebsiteData
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.GetWebsiteData.load({ "id" => "get_website_data_id" })
+result = client.GetWebsiteData.load()
 ```
 
 ### Common Methods

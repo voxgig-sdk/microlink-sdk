@@ -87,8 +87,8 @@ get_website_data = client.GetWebsiteData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `data` | `dict` | No |  |
+| `status` | `str` | No |  |
 
 ### Operations
 
@@ -97,7 +97,7 @@ get_website_data = client.GetWebsiteData()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.GetWebsiteData().load({"id": "get_website_data_id"})
+result = client.GetWebsiteData().load()
 ```
 
 ### Common Methods

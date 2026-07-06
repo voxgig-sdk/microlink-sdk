@@ -19,7 +19,7 @@ class GetWebsiteData
     public ?string $status = null;
 }
 
-/** Match filter for GetWebsiteData#load (any subset of GetWebsiteData fields). */
+/** Request payload for GetWebsiteData#load. */
 class GetWebsiteDataLoadMatch
 {
     public ?array $data = null;

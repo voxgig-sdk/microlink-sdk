@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -683,14 +680,17 @@
           "url": "https://microlink.io/docs/api/getting-started/overview"
         },
         "description": "Powerful API for automating browser actions. Retrieve meta data, take screenshots, generate PDFs, get color palettes, embed content, identify technologies, and more.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production API Server",
             "url": "https://api.microlink.io"
           }
         ],
+        "summary": "Powerful API for automating browser actions.",
         "title": "Microlink API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://microlink.io/docs/api/getting-started/overview"
       },
       "option": {},
       "target": {
@@ -743,6 +743,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -793,6 +796,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

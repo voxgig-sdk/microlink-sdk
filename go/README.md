@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single getwebsitedata — the value is the loaded record.
-    getwebsitedata, err := client.GetWebsiteData(nil).Load(nil, nil)
+    // Load a single getWebsiteData — the value is the loaded record.
+    getWebsiteData, err := client.GetWebsiteData(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(getwebsitedata)
+    fmt.Println(getWebsiteData)
 }
 ```
 
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getwebsitedata, err := client.GetWebsiteData(nil).Load(
+getWebsiteData, err := client.GetWebsiteData(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getwebsitedata) // the returned mock data
+fmt.Println(getWebsiteData) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -245,9 +245,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    getwebsitedata, err := client.GetWebsiteData(nil).Load(nil, nil)
+    getWebsiteData, err := client.GetWebsiteData(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // getwebsitedata is the returned record
+    // getWebsiteData is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -272,7 +272,7 @@ API path: `/`
 
 ### GetWebsiteData
 
-Create an instance: `get_website_data := client.GetWebsiteData(nil)`
+Create an instance: `getWebsiteData := client.GetWebsiteData(nil)`
 
 #### Operations
 
@@ -290,11 +290,11 @@ Create an instance: `get_website_data := client.GetWebsiteData(nil)`
 #### Example: Load
 
 ```go
-get_website_data, err := client.GetWebsiteData(nil).Load(nil, nil)
+getWebsiteData, err := client.GetWebsiteData(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(get_website_data) // the loaded record
+fmt.Println(getWebsiteData) // the loaded record
 ```
 
 

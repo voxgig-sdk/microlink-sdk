@@ -90,7 +90,8 @@ same parameters as `Direct()`.
 ## GetWebsiteDataEntity
 
 ```go
-get_website_data := client.GetWebsiteData(nil)
+getWebsiteData := client.GetWebsiteData(nil)
+fmt.Println(getWebsiteData.GetName()) // "get_website_data"
 ```
 
 ### Fields
@@ -108,6 +109,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.GetWebsiteData(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

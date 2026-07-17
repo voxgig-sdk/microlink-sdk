@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- Microlink SDK configuration
 
 local function make_config()
   return {

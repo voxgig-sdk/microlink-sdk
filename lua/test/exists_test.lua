@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Microlink SDK exists test
 
 local sdk = require("microlink_sdk")
 

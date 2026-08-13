@@ -116,8 +116,19 @@ const get_website_data = client.GetWebsiteData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
-| `status` | `string` | No |  |
+| `author` | `string` | No |  |
+| `date` | `string` | No |  |
+| `description` | `string` | No |  |
+| `image` | `Record<string, any>` | No |  |
+| `lang` | `string` | No |  |
+| `logo` | `Record<string, any>` | No |  |
+| `palette` | `any[]` | No |  |
+| `pdf` | `Record<string, any>` | No |  |
+| `publisher` | `string` | No |  |
+| `screenshot` | `Record<string, any>` | No |  |
+| `technologies` | `any[]` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

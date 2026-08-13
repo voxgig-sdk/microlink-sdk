@@ -6,12 +6,67 @@ main: kit: entity: get_website_data: {
 
   fields: [
     {
-      name: "data"
+      name: "author"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "image"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "status"
+      name: "lang"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "logo"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "palette"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "pdf"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "publisher"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "screenshot"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "technologies"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "title"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
       req: false
       type: "`$STRING`"
     }
@@ -460,7 +515,7 @@ main: kit: entity: get_website_data: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

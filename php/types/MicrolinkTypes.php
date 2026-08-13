@@ -15,14 +15,36 @@ declare(strict_types=1);
 /** GetWebsiteData entity data model. */
 class GetWebsiteData
 {
-    public ?array $data = null;
-    public ?string $status = null;
+    public ?string $author = null;
+    public ?string $date = null;
+    public ?string $description = null;
+    public ?array $image = null;
+    public ?string $lang = null;
+    public ?array $logo = null;
+    public ?array $palette = null;
+    public ?array $pdf = null;
+    public ?string $publisher = null;
+    public ?array $screenshot = null;
+    public ?array $technologies = null;
+    public ?string $title = null;
+    public ?string $url = null;
 }
 
 /** Request payload for GetWebsiteData#load. */
 class GetWebsiteDataLoadMatch
 {
-    public ?array $data = null;
-    public ?string $status = null;
+    public ?string $author = null;
+    public ?string $date = null;
+    public ?string $description = null;
+    public ?array $image = null;
+    public ?string $lang = null;
+    public ?array $logo = null;
+    public ?array $palette = null;
+    public ?array $pdf = null;
+    public ?string $publisher = null;
+    public ?array $screenshot = null;
+    public ?array $technologies = null;
+    public ?string $title = null;
+    public ?string $url = null;
 }
 

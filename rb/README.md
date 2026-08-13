@@ -34,7 +34,7 @@ client = MicrolinkSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetWebsiteData record (raises on error).
+  # load returns the ENTITY — call data_get for the GetWebsiteData record (raises on error).
   getwebsitedata = client.GetWebsiteData.load()
   puts getwebsitedata
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = MicrolinkSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 getwebsitedata = client.GetWebsiteData.load()
 puts getwebsitedata
 ```
@@ -234,8 +235,19 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `status` |  |
+| `author` |  |
+| `date` |  |
+| `description` |  |
+| `image` |  |
+| `lang` |  |
+| `logo` |  |
+| `palette` |  |
+| `pdf` |  |
+| `publisher` |  |
+| `screenshot` |  |
+| `technologies` |  |
+| `title` |  |
+| `url` |  |
 
 Operations: Load.
 
@@ -260,13 +272,24 @@ Create an instance: `get_website_data = client.GetWebsiteData`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
-| `status` | `String` |  |
+| `author` | `String` |  |
+| `date` | `String` |  |
+| `description` | `String` |  |
+| `image` | `Hash` |  |
+| `lang` | `String` |  |
+| `logo` | `Hash` |  |
+| `palette` | `Array` |  |
+| `pdf` | `Hash` |  |
+| `publisher` | `String` |  |
+| `screenshot` | `Hash` |  |
+| `technologies` | `Array` |  |
+| `title` | `String` |  |
+| `url` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare GetWebsiteData record (raises on error).
+# load returns the ENTITY — call data_get for the GetWebsiteData record (raises on error).
 get_website_data = client.GetWebsiteData.load()
 ```
 

@@ -38,7 +38,7 @@ client = MicrolinkSDK()
 
 ### 3. Load a getwebsitedata
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -122,7 +122,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MicrolinkSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 getwebsitedata = client.GetWebsiteData().load()
 # getwebsitedata contains the mock response record
 ```
@@ -218,7 +219,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -240,8 +241,19 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `status` |  |
+| `author` |  |
+| `date` |  |
+| `description` |  |
+| `image` |  |
+| `lang` |  |
+| `logo` |  |
+| `palette` |  |
+| `pdf` |  |
+| `publisher` |  |
+| `screenshot` |  |
+| `technologies` |  |
+| `title` |  |
+| `url` |  |
 
 Operations: Load.
 
@@ -266,8 +278,19 @@ Create an instance: `get_website_data = client.GetWebsiteData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `dict` |  |
-| `status` | `str` |  |
+| `author` | `str` |  |
+| `date` | `str` |  |
+| `description` | `str` |  |
+| `image` | `dict` |  |
+| `lang` | `str` |  |
+| `logo` | `dict` |  |
+| `palette` | `list` |  |
+| `pdf` | `dict` |  |
+| `publisher` | `str` |  |
+| `screenshot` | `dict` |  |
+| `technologies` | `list` |  |
+| `title` | `str` |  |
+| `url` | `str` |  |
 
 #### Example: Load
 

@@ -90,8 +90,19 @@ local get_website_data = client:GetWebsiteData(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `table` | No |  |
-| `status` | `string` | No |  |
+| `author` | `string` | No |  |
+| `date` | `string` | No |  |
+| `description` | `string` | No |  |
+| `image` | `table` | No |  |
+| `lang` | `string` | No |  |
+| `logo` | `table` | No |  |
+| `palette` | `table` | No |  |
+| `pdf` | `table` | No |  |
+| `publisher` | `string` | No |  |
+| `screenshot` | `table` | No |  |
+| `technologies` | `table` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

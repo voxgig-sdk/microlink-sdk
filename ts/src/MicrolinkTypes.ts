@@ -6,12 +6,34 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface GetWebsiteData {
-  data?: Record<string, any>
-  status?: string
+  author?: string
+  date?: string
+  description?: string
+  image?: Record<string, any>
+  lang?: string
+  logo?: Record<string, any>
+  palette?: any[]
+  pdf?: Record<string, any>
+  publisher?: string
+  screenshot?: Record<string, any>
+  technologies?: any[]
+  title?: string
+  url?: string
 }
 
 export interface GetWebsiteDataLoadMatch {
-  data?: Record<string, any>
-  status?: string
+  author?: string
+  date?: string
+  description?: string
+  image?: Record<string, any>
+  lang?: string
+  logo?: Record<string, any>
+  palette?: any[]
+  pdf?: Record<string, any>
+  publisher?: string
+  screenshot?: Record<string, any>
+  technologies?: any[]
+  title?: string
+  url?: string
 }
 

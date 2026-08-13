@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = MicrolinkSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = MicrolinkSDK.test({
+  entity: {
+    get_website_data: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const getwebsitedata = await client.GetWebsiteData().load()
-// getwebsitedata is a bare GetWebsiteData populated with mock data
+// getwebsitedata is the GetWebsiteData entity, populated with mock data
+// — call getwebsitedata.data() for the record itself
 console.log(getwebsitedata)
 ```
 
@@ -182,7 +191,7 @@ require_once 'microlink_sdk.php';
 $client = new MicrolinkSDK();
 
 
-// Load a specific getwebsitedata (returns the bare record; throws on error)
+// Load a specific getwebsitedata (returns the ENTITY; call data_get() for the record; throws on error)
 $getwebsitedata = $client->GetWebsiteData()->load();
 print_r($getwebsitedata);
 ```
@@ -210,7 +219,7 @@ require_relative "Microlink_sdk"
 client = MicrolinkSDK.new
 
 
-# Load a specific getwebsitedata (returns the bare record; raises on error)
+# Load a specific getwebsitedata (returns the ENTITY; call data_get for the record)
 getwebsitedata = client.GetWebsiteData.load()
 puts getwebsitedata
 ```
@@ -344,6 +353,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://microlink.io/docs/api/getting-started/overview](https://microlink.io/docs/api/getting-started/overview)
 

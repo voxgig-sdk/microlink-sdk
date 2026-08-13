@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = MicrolinkSDK.test()
 
 const getwebsitedata = await client.GetWebsiteData().load()
-// getwebsitedata is a bare entity populated with mock response data
+// getwebsitedata is the entity, populated with mock response data
+// — call getwebsitedata.data() for the record itself
 console.log(getwebsitedata)
 ```
 
@@ -284,8 +285,19 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `status` |  |
+| `author` |  |
+| `date` |  |
+| `description` |  |
+| `image` |  |
+| `lang` |  |
+| `logo` |  |
+| `palette` |  |
+| `pdf` |  |
+| `publisher` |  |
+| `screenshot` |  |
+| `technologies` |  |
+| `title` |  |
+| `url` |  |
 
 Operations: load.
 
@@ -310,8 +322,19 @@ Create an instance: `const get_website_data = client.GetWebsiteData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
-| `status` | `string` |  |
+| `author` | `string` |  |
+| `date` | `string` |  |
+| `description` | `string` |  |
+| `image` | `Record<string, any>` |  |
+| `lang` | `string` |  |
+| `logo` | `Record<string, any>` |  |
+| `palette` | `any[]` |  |
+| `pdf` | `Record<string, any>` |  |
+| `publisher` | `string` |  |
+| `screenshot` | `Record<string, any>` |  |
+| `technologies` | `any[]` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 

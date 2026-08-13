@@ -87,8 +87,19 @@ get_website_data = client.GetWebsiteData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
-| `status` | `str` | No |  |
+| `author` | `str` | No |  |
+| `date` | `str` | No |  |
+| `description` | `str` | No |  |
+| `image` | `dict` | No |  |
+| `lang` | `str` | No |  |
+| `logo` | `dict` | No |  |
+| `palette` | `list` | No |  |
+| `pdf` | `dict` | No |  |
+| `publisher` | `str` | No |  |
+| `screenshot` | `dict` | No |  |
+| `technologies` | `list` | No |  |
+| `title` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 

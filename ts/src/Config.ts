@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Microlink',
   }
 
 
@@ -56,17 +56,94 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "data",
+          "name": "author",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "status",
+          "name": "date",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
+        },
+        {
+          "active": true,
+          "name": "description",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "image",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "lang",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 4
+        },
+        {
+          "active": true,
+          "name": "logo",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 5
+        },
+        {
+          "active": true,
+          "name": "palette",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "pdf",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "publisher",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "screenshot",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "technologies",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "title",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 12
         }
       ],
       "name": "get_website_data",
@@ -506,6 +583,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/",
               "parts": [],
@@ -568,7 +646,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }

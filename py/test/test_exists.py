@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Microlink SDK exists test
 
 import pytest
 from microlink_sdk import MicrolinkSDK

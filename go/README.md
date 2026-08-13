@@ -258,8 +258,19 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"status"` |  |
+| `"author"` |  |
+| `"date"` |  |
+| `"description"` |  |
+| `"image"` |  |
+| `"lang"` |  |
+| `"logo"` |  |
+| `"palette"` |  |
+| `"pdf"` |  |
+| `"publisher"` |  |
+| `"screenshot"` |  |
+| `"technologies"` |  |
+| `"title"` |  |
+| `"url"` |  |
 
 Operations: Load.
 
@@ -284,8 +295,19 @@ Create an instance: `getWebsiteData := client.GetWebsiteData(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
-| `status` | `string` |  |
+| `author` | `string` |  |
+| `date` | `string` |  |
+| `description` | `string` |  |
+| `image` | `map[string]any` |  |
+| `lang` | `string` |  |
+| `logo` | `map[string]any` |  |
+| `palette` | `[]any` |  |
+| `pdf` | `map[string]any` |  |
+| `publisher` | `string` |  |
+| `screenshot` | `map[string]any` |  |
+| `technologies` | `[]any` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 

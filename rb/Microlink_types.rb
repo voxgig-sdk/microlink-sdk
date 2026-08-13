@@ -10,27 +10,115 @@
 
 # GetWebsiteData entity data model.
 #
-# @!attribute [rw] data
+# @!attribute [rw] author
+#   @return [String, nil]
+#
+# @!attribute [rw] date
+#   @return [String, nil]
+#
+# @!attribute [rw] description
+#   @return [String, nil]
+#
+# @!attribute [rw] image
 #   @return [Hash, nil]
 #
-# @!attribute [rw] status
+# @!attribute [rw] lang
+#   @return [String, nil]
+#
+# @!attribute [rw] logo
+#   @return [Hash, nil]
+#
+# @!attribute [rw] palette
+#   @return [Array, nil]
+#
+# @!attribute [rw] pdf
+#   @return [Hash, nil]
+#
+# @!attribute [rw] publisher
+#   @return [String, nil]
+#
+# @!attribute [rw] screenshot
+#   @return [Hash, nil]
+#
+# @!attribute [rw] technologies
+#   @return [Array, nil]
+#
+# @!attribute [rw] title
+#   @return [String, nil]
+#
+# @!attribute [rw] url
 #   @return [String, nil]
 GetWebsiteData = Struct.new(
-  :data,
-  :status,
+  :author,
+  :date,
+  :description,
+  :image,
+  :lang,
+  :logo,
+  :palette,
+  :pdf,
+  :publisher,
+  :screenshot,
+  :technologies,
+  :title,
+  :url,
   keyword_init: true
 )
 
 # Request payload for GetWebsiteData#load.
 #
-# @!attribute [rw] data
+# @!attribute [rw] author
+#   @return [String, nil]
+#
+# @!attribute [rw] date
+#   @return [String, nil]
+#
+# @!attribute [rw] description
+#   @return [String, nil]
+#
+# @!attribute [rw] image
 #   @return [Hash, nil]
 #
-# @!attribute [rw] status
+# @!attribute [rw] lang
+#   @return [String, nil]
+#
+# @!attribute [rw] logo
+#   @return [Hash, nil]
+#
+# @!attribute [rw] palette
+#   @return [Array, nil]
+#
+# @!attribute [rw] pdf
+#   @return [Hash, nil]
+#
+# @!attribute [rw] publisher
+#   @return [String, nil]
+#
+# @!attribute [rw] screenshot
+#   @return [Hash, nil]
+#
+# @!attribute [rw] technologies
+#   @return [Array, nil]
+#
+# @!attribute [rw] title
+#   @return [String, nil]
+#
+# @!attribute [rw] url
 #   @return [String, nil]
 GetWebsiteDataLoadMatch = Struct.new(
-  :data,
-  :status,
+  :author,
+  :date,
+  :description,
+  :image,
+  :lang,
+  :logo,
+  :palette,
+  :pdf,
+  :publisher,
+  :screenshot,
+  :technologies,
+  :title,
+  :url,
   keyword_init: true
 )
 

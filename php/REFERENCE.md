@@ -92,8 +92,19 @@ $get_website_data = $client->GetWebsiteData();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `status` | `string` | No |  |
+| `author` | `string` | No |  |
+| `date` | `string` | No |  |
+| `description` | `string` | No |  |
+| `image` | `array` | No |  |
+| `lang` | `string` | No |  |
+| `logo` | `array` | No |  |
+| `palette` | `array` | No |  |
+| `pdf` | `array` | No |  |
+| `publisher` | `string` | No |  |
+| `screenshot` | `array` | No |  |
+| `technologies` | `array` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

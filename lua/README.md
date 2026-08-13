@@ -225,8 +225,19 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `status` |  |
+| `author` |  |
+| `date` |  |
+| `description` |  |
+| `image` |  |
+| `lang` |  |
+| `logo` |  |
+| `palette` |  |
+| `pdf` |  |
+| `publisher` |  |
+| `screenshot` |  |
+| `technologies` |  |
+| `title` |  |
+| `url` |  |
 
 Operations: Load.
 
@@ -251,8 +262,19 @@ Create an instance: `local get_website_data = client:GetWebsiteData(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `table` |  |
-| `status` | `string` |  |
+| `author` | `string` |  |
+| `date` | `string` |  |
+| `description` | `string` |  |
+| `image` | `table` |  |
+| `lang` | `string` |  |
+| `logo` | `table` |  |
+| `palette` | `table` |  |
+| `pdf` | `table` |  |
+| `publisher` | `string` |  |
+| `screenshot` | `table` |  |
+| `technologies` | `table` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 

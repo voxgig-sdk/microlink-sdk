@@ -7,12 +7,34 @@
 -- edit by hand.
 
 ---@class GetWebsiteData
----@field data? table
----@field status? string
+---@field author? string
+---@field date? string
+---@field description? string
+---@field image? table
+---@field lang? string
+---@field logo? table
+---@field palette? table
+---@field pdf? table
+---@field publisher? string
+---@field screenshot? table
+---@field technologies? table
+---@field title? string
+---@field url? string
 
 ---@class GetWebsiteDataLoadMatch
----@field data? table
----@field status? string
+---@field author? string
+---@field date? string
+---@field description? string
+---@field image? table
+---@field lang? string
+---@field logo? table
+---@field palette? table
+---@field pdf? table
+---@field publisher? string
+---@field screenshot? table
+---@field technologies? table
+---@field title? string
+---@field url? string
 
 local M = {}
 

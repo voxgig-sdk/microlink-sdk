@@ -2,18 +2,51 @@
   "existing": {
     "get_website_data": {
       "GET_WEBSITE_DATA00": {
-        "data": {},
-        "status": "s15",
+        "author": "s82",
+        "date": "s83",
+        "description": "s84",
+        "image": {},
+        "lang": "s86",
+        "logo": {},
+        "palette": [],
+        "pdf": {},
+        "publisher": "s8a",
+        "screenshot": {},
+        "technologies": [],
+        "title": "s8d",
+        "url": "s8e",
         "id": "GET_WEBSITE_DATA00"
       },
       "GET_WEBSITE_DATA01": {
-        "data": {},
-        "status": "s29",
+        "author": "s104",
+        "date": "s105",
+        "description": "s106",
+        "image": {},
+        "lang": "s108",
+        "logo": {},
+        "palette": [],
+        "pdf": {},
+        "publisher": "s10c",
+        "screenshot": {},
+        "technologies": [],
+        "title": "s10f",
+        "url": "s110",
         "id": "GET_WEBSITE_DATA01"
       },
       "GET_WEBSITE_DATA02": {
-        "data": {},
-        "status": "s3d",
+        "author": "s186",
+        "date": "s187",
+        "description": "s188",
+        "image": {},
+        "lang": "s18a",
+        "logo": {},
+        "palette": [],
+        "pdf": {},
+        "publisher": "s18e",
+        "screenshot": {},
+        "technologies": [],
+        "title": "s191",
+        "url": "s192",
         "id": "GET_WEBSITE_DATA02"
       }
     }
@@ -21,8 +54,19 @@
   "new": {
     "get_website_data": {
       "get_website_data_ref01": {
-        "data": {},
-        "status": "s51"
+        "author": "s208",
+        "date": "s209",
+        "description": "s20a",
+        "image": {},
+        "lang": "s20c",
+        "logo": {},
+        "palette": [],
+        "pdf": {},
+        "publisher": "s210",
+        "screenshot": {},
+        "technologies": [],
+        "title": "s213",
+        "url": "s214"
       }
     }
   }

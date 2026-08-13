@@ -98,8 +98,19 @@ fmt.Println(getWebsiteData.GetName()) // "get_website_data"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
-| `status` | `string` | No |  |
+| `author` | `string` | No |  |
+| `date` | `string` | No |  |
+| `description` | `string` | No |  |
+| `image` | `map[string]any` | No |  |
+| `lang` | `string` | No |  |
+| `logo` | `map[string]any` | No |  |
+| `palette` | `[]any` | No |  |
+| `pdf` | `map[string]any` | No |  |
+| `publisher` | `string` | No |  |
+| `screenshot` | `map[string]any` | No |  |
+| `technologies` | `[]any` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

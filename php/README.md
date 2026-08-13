@@ -35,7 +35,7 @@ $client = new MicrolinkSDK();
 
 ```php
 try {
-    // load() returns the bare GetWebsiteData record (throws on error).
+    // load() returns the ENTITY — call data_get() for the GetWebsiteData record (throws on error).
     $getwebsitedata = $client->GetWebsiteData()->load();
     print_r($getwebsitedata);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = MicrolinkSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $getwebsitedata = $client->GetWebsiteData()->load();
 print_r($getwebsitedata);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -244,8 +245,19 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `status` |  |
+| `author` |  |
+| `date` |  |
+| `description` |  |
+| `image` |  |
+| `lang` |  |
+| `logo` |  |
+| `palette` |  |
+| `pdf` |  |
+| `publisher` |  |
+| `screenshot` |  |
+| `technologies` |  |
+| `title` |  |
+| `url` |  |
 
 Operations: Load.
 
@@ -270,13 +282,24 @@ Create an instance: `$get_website_data = $client->GetWebsiteData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `array` |  |
-| `status` | `string` |  |
+| `author` | `string` |  |
+| `date` | `string` |  |
+| `description` | `string` |  |
+| `image` | `array` |  |
+| `lang` | `string` |  |
+| `logo` | `array` |  |
+| `palette` | `array` |  |
+| `pdf` | `array` |  |
+| `publisher` | `string` |  |
+| `screenshot` | `array` |  |
+| `technologies` | `array` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare GetWebsiteData record (throws on error).
+// load() returns the ENTITY — call data_get() for the GetWebsiteData record (throws on error).
 $get_website_data = $client->GetWebsiteData()->load();
 ```
 

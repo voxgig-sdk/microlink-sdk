@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MicrolinkControl
-from core.error import MicrolinkError
-from core.result import MicrolinkResult
-from core.spec import MicrolinkSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import MicrolinkControl
+from projectname_sdk.core.error import MicrolinkError
+from projectname_sdk.core.result import MicrolinkResult
+from projectname_sdk.core.spec import MicrolinkSpec
 
 
 # True when this SDK was generated with the named feature.

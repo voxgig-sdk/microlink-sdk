@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import MicrolinkSDK
-from core.error import MicrolinkError
-from core.result import MicrolinkResult
-from core.response import MicrolinkResponse
-from core.spec import MicrolinkSpec
-from feature.base_feature import MicrolinkBaseFeature
+from projectname_sdk.core.error import MicrolinkError
+from projectname_sdk.core.result import MicrolinkResult
+from projectname_sdk.core.response import MicrolinkResponse
+from projectname_sdk.core.spec import MicrolinkSpec
+from projectname_sdk.feature.base_feature import MicrolinkBaseFeature
 
 
 def _client():

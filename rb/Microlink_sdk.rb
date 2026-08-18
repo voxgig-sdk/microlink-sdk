@@ -28,7 +28,7 @@ class MicrolinkSDK
     utility = MicrolinkUtility.new
     @_utility = utility
 
-    config = MicrolinkConfig.make_config
+    config = MicrolinkConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

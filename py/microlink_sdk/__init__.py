@@ -23,8 +23,8 @@ class MicrolinkSDK:
         utility = MicrolinkUtility()
         self._utility = utility
 
-        from microlink_sdk.config import make_config
-        config = make_config()
+        from microlink_sdk.config import shared_config
+        config = shared_config()
 
         self._rootctx = utility.make_context({
             "client": self,

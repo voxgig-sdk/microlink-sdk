@@ -225,19 +225,19 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `date` |  |
-| `description` |  |
-| `image` |  |
-| `lang` |  |
-| `logo` |  |
-| `palette` |  |
-| `pdf` |  |
-| `publisher` |  |
-| `screenshot` |  |
-| `technologies` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Page author |
+| `date` | Publication date |
+| `description` | Page description |
+| `image` | Primary image data |
+| `lang` | Page language |
+| `logo` | Site logo data |
+| `palette` | Color palette (when palette=true) |
+| `pdf` | PDF data (when pdf=true) |
+| `publisher` | Page publisher |
+| `screenshot` | Screenshot data (when screenshot=true) |
+| `technologies` | Detected technologies (when technologies=true) |
+| `title` | Page title |
+| `url` | Canonical URL |
 
 Operations: Load.
 
@@ -262,19 +262,19 @@ Create an instance: `local get_website_data = client:GetWebsiteData(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `date` | `string` |  |
-| `description` | `string` |  |
-| `image` | `table` |  |
-| `lang` | `string` |  |
-| `logo` | `table` |  |
-| `palette` | `table` |  |
-| `pdf` | `table` |  |
-| `publisher` | `string` |  |
-| `screenshot` | `table` |  |
-| `technologies` | `table` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Page author |
+| `date` | `string` | Publication date |
+| `description` | `string` | Page description |
+| `image` | `table` | Primary image data |
+| `lang` | `string` | Page language |
+| `logo` | `table` | Site logo data |
+| `palette` | `table` | Color palette (when palette=true) |
+| `pdf` | `table` | PDF data (when pdf=true) |
+| `publisher` | `string` | Page publisher |
+| `screenshot` | `table` | Screenshot data (when screenshot=true) |
+| `technologies` | `table` | Detected technologies (when technologies=true) |
+| `title` | `string` | Page title |
+| `url` | `string` | Canonical URL |
 
 #### Example: Load
 

@@ -235,19 +235,19 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `date` |  |
-| `description` |  |
-| `image` |  |
-| `lang` |  |
-| `logo` |  |
-| `palette` |  |
-| `pdf` |  |
-| `publisher` |  |
-| `screenshot` |  |
-| `technologies` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Page author |
+| `date` | Publication date |
+| `description` | Page description |
+| `image` | Primary image data |
+| `lang` | Page language |
+| `logo` | Site logo data |
+| `palette` | Color palette (when palette=true) |
+| `pdf` | PDF data (when pdf=true) |
+| `publisher` | Page publisher |
+| `screenshot` | Screenshot data (when screenshot=true) |
+| `technologies` | Detected technologies (when technologies=true) |
+| `title` | Page title |
+| `url` | Canonical URL |
 
 Operations: Load.
 
@@ -272,19 +272,19 @@ Create an instance: `get_website_data = client.GetWebsiteData`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `date` | `String` |  |
-| `description` | `String` |  |
-| `image` | `Hash` |  |
-| `lang` | `String` |  |
-| `logo` | `Hash` |  |
-| `palette` | `Array` |  |
-| `pdf` | `Hash` |  |
-| `publisher` | `String` |  |
-| `screenshot` | `Hash` |  |
-| `technologies` | `Array` |  |
-| `title` | `String` |  |
-| `url` | `String` |  |
+| `author` | `String` | Page author |
+| `date` | `String` | Publication date |
+| `description` | `String` | Page description |
+| `image` | `Hash` | Primary image data |
+| `lang` | `String` | Page language |
+| `logo` | `Hash` | Site logo data |
+| `palette` | `Array` | Color palette (when palette=true) |
+| `pdf` | `Hash` | PDF data (when pdf=true) |
+| `publisher` | `String` | Page publisher |
+| `screenshot` | `Hash` | Screenshot data (when screenshot=true) |
+| `technologies` | `Array` | Detected technologies (when technologies=true) |
+| `title` | `String` | Page title |
+| `url` | `String` | Canonical URL |
 
 #### Example: Load
 

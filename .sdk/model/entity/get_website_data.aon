@@ -8,66 +8,79 @@ main: kit: entity: get_website_data: {
     {
       name: "author"
       req: false
+      short: "Page author"
       type: "`$STRING`"
     }
     {
       name: "date"
       req: false
+      short: "Publication date"
       type: "`$STRING`"
     }
     {
       name: "description"
       req: false
+      short: "Page description"
       type: "`$STRING`"
     }
     {
       name: "image"
       req: false
+      short: "Primary image data"
       type: "`$OBJECT`"
     }
     {
       name: "lang"
       req: false
+      short: "Page language"
       type: "`$STRING`"
     }
     {
       name: "logo"
       req: false
+      short: "Site logo data"
       type: "`$OBJECT`"
     }
     {
       name: "palette"
       req: false
+      short: "Color palette (when palette=true)"
       type: "`$ARRAY`"
     }
     {
       name: "pdf"
       req: false
+      short: "PDF data (when pdf=true)"
       type: "`$OBJECT`"
     }
     {
       name: "publisher"
       req: false
+      short: "Page publisher"
       type: "`$STRING`"
     }
     {
       name: "screenshot"
       req: false
+      short: "Screenshot data (when screenshot=true)"
       type: "`$OBJECT`"
     }
     {
       name: "technologies"
       req: false
+      short: "Detected technologies (when technologies=true)"
       type: "`$ARRAY`"
     }
     {
       name: "title"
       req: false
+      short: "Page title"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "Canonical URL"
       type: "`$STRING`"
     }
   ]

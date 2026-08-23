@@ -241,19 +241,19 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `date` |  |
-| `description` |  |
-| `image` |  |
-| `lang` |  |
-| `logo` |  |
-| `palette` |  |
-| `pdf` |  |
-| `publisher` |  |
-| `screenshot` |  |
-| `technologies` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Page author |
+| `date` | Publication date |
+| `description` | Page description |
+| `image` | Primary image data |
+| `lang` | Page language |
+| `logo` | Site logo data |
+| `palette` | Color palette (when palette=true) |
+| `pdf` | PDF data (when pdf=true) |
+| `publisher` | Page publisher |
+| `screenshot` | Screenshot data (when screenshot=true) |
+| `technologies` | Detected technologies (when technologies=true) |
+| `title` | Page title |
+| `url` | Canonical URL |
 
 Operations: Load.
 
@@ -278,19 +278,19 @@ Create an instance: `get_website_data = client.GetWebsiteData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `str` |  |
-| `date` | `str` |  |
-| `description` | `str` |  |
-| `image` | `dict` |  |
-| `lang` | `str` |  |
-| `logo` | `dict` |  |
-| `palette` | `list` |  |
-| `pdf` | `dict` |  |
-| `publisher` | `str` |  |
-| `screenshot` | `dict` |  |
-| `technologies` | `list` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `author` | `str` | Page author |
+| `date` | `str` | Publication date |
+| `description` | `str` | Page description |
+| `image` | `dict` | Primary image data |
+| `lang` | `str` | Page language |
+| `logo` | `dict` | Site logo data |
+| `palette` | `list` | Color palette (when palette=true) |
+| `pdf` | `dict` | PDF data (when pdf=true) |
+| `publisher` | `str` | Page publisher |
+| `screenshot` | `dict` | Screenshot data (when screenshot=true) |
+| `technologies` | `list` | Detected technologies (when technologies=true) |
+| `title` | `str` | Page title |
+| `url` | `str` | Canonical URL |
 
 #### Example: Load
 

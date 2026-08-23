@@ -93,19 +93,19 @@ get_website_data = client.GetWebsiteData
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | No |  |
-| `date` | `String` | No |  |
-| `description` | `String` | No |  |
-| `image` | `Hash` | No |  |
-| `lang` | `String` | No |  |
-| `logo` | `Hash` | No |  |
-| `palette` | `Array` | No |  |
-| `pdf` | `Hash` | No |  |
-| `publisher` | `String` | No |  |
-| `screenshot` | `Hash` | No |  |
-| `technologies` | `Array` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `author` | `String` | No | Page author |
+| `date` | `String` | No | Publication date |
+| `description` | `String` | No | Page description |
+| `image` | `Hash` | No | Primary image data |
+| `lang` | `String` | No | Page language |
+| `logo` | `Hash` | No | Site logo data |
+| `palette` | `Array` | No | Color palette (when palette=true) |
+| `pdf` | `Hash` | No | PDF data (when pdf=true) |
+| `publisher` | `String` | No | Page publisher |
+| `screenshot` | `Hash` | No | Screenshot data (when screenshot=true) |
+| `technologies` | `Array` | No | Detected technologies (when technologies=true) |
+| `title` | `String` | No | Page title |
+| `url` | `String` | No | Canonical URL |
 
 ### Operations
 

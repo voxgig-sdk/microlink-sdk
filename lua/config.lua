@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Microlink",
+      slug = "microlink",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -29,54 +32,67 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "author",
+            ["short"] = "Page author",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "date",
+            ["short"] = "Publication date",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "description",
+            ["short"] = "Page description",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "image",
+            ["short"] = "Primary image data",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "lang",
+            ["short"] = "Page language",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "logo",
+            ["short"] = "Site logo data",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "palette",
+            ["short"] = "Color palette (when palette=true)",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "pdf",
+            ["short"] = "PDF data (when pdf=true)",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "publisher",
+            ["short"] = "Page publisher",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "screenshot",
+            ["short"] = "Screenshot data (when screenshot=true)",
             ["type"] = "`$OBJECT`",
           },
           {
             ["name"] = "technologies",
+            ["short"] = "Detected technologies (when technologies=true)",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "title",
+            ["short"] = "Page title",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "url",
+            ["short"] = "Canonical URL",
             ["type"] = "`$STRING`",
           },
         },

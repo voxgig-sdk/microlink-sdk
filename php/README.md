@@ -245,19 +245,19 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `date` |  |
-| `description` |  |
-| `image` |  |
-| `lang` |  |
-| `logo` |  |
-| `palette` |  |
-| `pdf` |  |
-| `publisher` |  |
-| `screenshot` |  |
-| `technologies` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Page author |
+| `date` | Publication date |
+| `description` | Page description |
+| `image` | Primary image data |
+| `lang` | Page language |
+| `logo` | Site logo data |
+| `palette` | Color palette (when palette=true) |
+| `pdf` | PDF data (when pdf=true) |
+| `publisher` | Page publisher |
+| `screenshot` | Screenshot data (when screenshot=true) |
+| `technologies` | Detected technologies (when technologies=true) |
+| `title` | Page title |
+| `url` | Canonical URL |
 
 Operations: Load.
 
@@ -282,19 +282,19 @@ Create an instance: `$get_website_data = $client->GetWebsiteData();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `date` | `string` |  |
-| `description` | `string` |  |
-| `image` | `array` |  |
-| `lang` | `string` |  |
-| `logo` | `array` |  |
-| `palette` | `array` |  |
-| `pdf` | `array` |  |
-| `publisher` | `string` |  |
-| `screenshot` | `array` |  |
-| `technologies` | `array` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Page author |
+| `date` | `string` | Publication date |
+| `description` | `string` | Page description |
+| `image` | `array` | Primary image data |
+| `lang` | `string` | Page language |
+| `logo` | `array` | Site logo data |
+| `palette` | `array` | Color palette (when palette=true) |
+| `pdf` | `array` | PDF data (when pdf=true) |
+| `publisher` | `string` | Page publisher |
+| `screenshot` | `array` | Screenshot data (when screenshot=true) |
+| `technologies` | `array` | Detected technologies (when technologies=true) |
+| `title` | `string` | Page title |
+| `url` | `string` | Canonical URL |
 
 #### Example: Load
 

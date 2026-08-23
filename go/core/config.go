@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Microlink",
+			"slug": "microlink",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,54 +36,67 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"short": "Page author",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "date",
+						"short": "Publication date",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Page description",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "image",
+						"short": "Primary image data",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "lang",
+						"short": "Page language",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "logo",
+						"short": "Site logo data",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "palette",
+						"short": "Color palette (when palette=true)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "pdf",
+						"short": "PDF data (when pdf=true)",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "publisher",
+						"short": "Page publisher",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "screenshot",
+						"short": "Screenshot data (when screenshot=true)",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "technologies",
+						"short": "Detected technologies (when technologies=true)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "title",
+						"short": "Page title",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "Canonical URL",
 						"type": "`$STRING`",
 					},
 				},

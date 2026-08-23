@@ -87,19 +87,19 @@ get_website_data = client.GetWebsiteData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `str` | No |  |
-| `date` | `str` | No |  |
-| `description` | `str` | No |  |
-| `image` | `dict` | No |  |
-| `lang` | `str` | No |  |
-| `logo` | `dict` | No |  |
-| `palette` | `list` | No |  |
-| `pdf` | `dict` | No |  |
-| `publisher` | `str` | No |  |
-| `screenshot` | `dict` | No |  |
-| `technologies` | `list` | No |  |
-| `title` | `str` | No |  |
-| `url` | `str` | No |  |
+| `author` | `str` | No | Page author |
+| `date` | `str` | No | Publication date |
+| `description` | `str` | No | Page description |
+| `image` | `dict` | No | Primary image data |
+| `lang` | `str` | No | Page language |
+| `logo` | `dict` | No | Site logo data |
+| `palette` | `list` | No | Color palette (when palette=true) |
+| `pdf` | `dict` | No | PDF data (when pdf=true) |
+| `publisher` | `str` | No | Page publisher |
+| `screenshot` | `dict` | No | Screenshot data (when screenshot=true) |
+| `technologies` | `list` | No | Detected technologies (when technologies=true) |
+| `title` | `str` | No | Page title |
+| `url` | `str` | No | Canonical URL |
 
 ### Operations
 

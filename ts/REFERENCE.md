@@ -116,19 +116,19 @@ const get_website_data = client.GetWebsiteData()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | No |  |
-| `date` | `string` | No |  |
-| `description` | `string` | No |  |
-| `image` | `Record<string, any>` | No |  |
-| `lang` | `string` | No |  |
-| `logo` | `Record<string, any>` | No |  |
-| `palette` | `any[]` | No |  |
-| `pdf` | `Record<string, any>` | No |  |
-| `publisher` | `string` | No |  |
-| `screenshot` | `Record<string, any>` | No |  |
-| `technologies` | `any[]` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `author` | `string` | No | Page author |
+| `date` | `string` | No | Publication date |
+| `description` | `string` | No | Page description |
+| `image` | `Record<string, any>` | No | Primary image data |
+| `lang` | `string` | No | Page language |
+| `logo` | `Record<string, any>` | No | Site logo data |
+| `palette` | `any[]` | No | Color palette (when palette=true) |
+| `pdf` | `Record<string, any>` | No | PDF data (when pdf=true) |
+| `publisher` | `string` | No | Page publisher |
+| `screenshot` | `Record<string, any>` | No | Screenshot data (when screenshot=true) |
+| `technologies` | `any[]` | No | Detected technologies (when technologies=true) |
+| `title` | `string` | No | Page title |
+| `url` | `string` | No | Canonical URL |
 
 ### Operations
 

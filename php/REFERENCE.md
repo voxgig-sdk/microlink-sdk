@@ -92,19 +92,19 @@ $get_website_data = $client->GetWebsiteData();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | No |  |
-| `date` | `string` | No |  |
-| `description` | `string` | No |  |
-| `image` | `array` | No |  |
-| `lang` | `string` | No |  |
-| `logo` | `array` | No |  |
-| `palette` | `array` | No |  |
-| `pdf` | `array` | No |  |
-| `publisher` | `string` | No |  |
-| `screenshot` | `array` | No |  |
-| `technologies` | `array` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `author` | `string` | No | Page author |
+| `date` | `string` | No | Publication date |
+| `description` | `string` | No | Page description |
+| `image` | `array` | No | Primary image data |
+| `lang` | `string` | No | Page language |
+| `logo` | `array` | No | Site logo data |
+| `palette` | `array` | No | Color palette (when palette=true) |
+| `pdf` | `array` | No | PDF data (when pdf=true) |
+| `publisher` | `string` | No | Page publisher |
+| `screenshot` | `array` | No | Screenshot data (when screenshot=true) |
+| `technologies` | `array` | No | Detected technologies (when technologies=true) |
+| `title` | `string` | No | Page title |
+| `url` | `string` | No | Canonical URL |
 
 ### Operations
 

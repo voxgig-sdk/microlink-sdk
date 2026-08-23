@@ -36,78 +36,91 @@
               "active": true,
               "name": "author",
               "req": false,
+              "short": "Page author",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "date",
               "req": false,
+              "short": "Publication date",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Page description",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "Primary image data",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "lang",
               "req": false,
+              "short": "Page language",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "logo",
               "req": false,
+              "short": "Site logo data",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "palette",
               "req": false,
+              "short": "Color palette (when palette=true)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "pdf",
               "req": false,
+              "short": "PDF data (when pdf=true)",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "publisher",
               "req": false,
+              "short": "Page publisher",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "screenshot",
               "req": false,
+              "short": "Screenshot data (when screenshot=true)",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "technologies",
               "req": false,
+              "short": "Detected technologies (when technologies=true)",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Page title",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "Canonical URL",
               "type": "`$STRING`"
             }
           ],

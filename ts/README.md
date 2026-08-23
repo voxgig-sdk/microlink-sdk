@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -285,19 +285,19 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `date` |  |
-| `description` |  |
-| `image` |  |
-| `lang` |  |
-| `logo` |  |
-| `palette` |  |
-| `pdf` |  |
-| `publisher` |  |
-| `screenshot` |  |
-| `technologies` |  |
-| `title` |  |
-| `url` |  |
+| `author` | Page author |
+| `date` | Publication date |
+| `description` | Page description |
+| `image` | Primary image data |
+| `lang` | Page language |
+| `logo` | Site logo data |
+| `palette` | Color palette (when palette=true) |
+| `pdf` | PDF data (when pdf=true) |
+| `publisher` | Page publisher |
+| `screenshot` | Screenshot data (when screenshot=true) |
+| `technologies` | Detected technologies (when technologies=true) |
+| `title` | Page title |
+| `url` | Canonical URL |
 
 Operations: load.
 
@@ -322,19 +322,19 @@ Create an instance: `const get_website_data = client.GetWebsiteData()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `date` | `string` |  |
-| `description` | `string` |  |
-| `image` | `Record<string, any>` |  |
-| `lang` | `string` |  |
-| `logo` | `Record<string, any>` |  |
-| `palette` | `any[]` |  |
-| `pdf` | `Record<string, any>` |  |
-| `publisher` | `string` |  |
-| `screenshot` | `Record<string, any>` |  |
-| `technologies` | `any[]` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Page author |
+| `date` | `string` | Publication date |
+| `description` | `string` | Page description |
+| `image` | `Record<string, any>` | Primary image data |
+| `lang` | `string` | Page language |
+| `logo` | `Record<string, any>` | Site logo data |
+| `palette` | `any[]` | Color palette (when palette=true) |
+| `pdf` | `Record<string, any>` | PDF data (when pdf=true) |
+| `publisher` | `string` | Page publisher |
+| `screenshot` | `Record<string, any>` | Screenshot data (when screenshot=true) |
+| `technologies` | `any[]` | Detected technologies (when technologies=true) |
+| `title` | `string` | Page title |
+| `url` | `string` | Canonical URL |
 
 #### Example: Load
 

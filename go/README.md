@@ -6,7 +6,7 @@ The Golang SDK for the Microlink API — an entity-oriented client using standar
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.GetWebsiteData(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -258,19 +258,19 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"author"` |  |
-| `"date"` |  |
-| `"description"` |  |
-| `"image"` |  |
-| `"lang"` |  |
-| `"logo"` |  |
-| `"palette"` |  |
-| `"pdf"` |  |
-| `"publisher"` |  |
-| `"screenshot"` |  |
-| `"technologies"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"author"` | Page author |
+| `"date"` | Publication date |
+| `"description"` | Page description |
+| `"image"` | Primary image data |
+| `"lang"` | Page language |
+| `"logo"` | Site logo data |
+| `"palette"` | Color palette (when palette=true) |
+| `"pdf"` | PDF data (when pdf=true) |
+| `"publisher"` | Page publisher |
+| `"screenshot"` | Screenshot data (when screenshot=true) |
+| `"technologies"` | Detected technologies (when technologies=true) |
+| `"title"` | Page title |
+| `"url"` | Canonical URL |
 
 Operations: Load.
 
@@ -295,19 +295,19 @@ Create an instance: `getWebsiteData := client.GetWebsiteData(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `date` | `string` |  |
-| `description` | `string` |  |
-| `image` | `map[string]any` |  |
-| `lang` | `string` |  |
-| `logo` | `map[string]any` |  |
-| `palette` | `[]any` |  |
-| `pdf` | `map[string]any` |  |
-| `publisher` | `string` |  |
-| `screenshot` | `map[string]any` |  |
-| `technologies` | `[]any` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `author` | `string` | Page author |
+| `date` | `string` | Publication date |
+| `description` | `string` | Page description |
+| `image` | `map[string]any` | Primary image data |
+| `lang` | `string` | Page language |
+| `logo` | `map[string]any` | Site logo data |
+| `palette` | `[]any` | Color palette (when palette=true) |
+| `pdf` | `map[string]any` | PDF data (when pdf=true) |
+| `publisher` | `string` | Page publisher |
+| `screenshot` | `map[string]any` | Screenshot data (when screenshot=true) |
+| `technologies` | `[]any` | Detected technologies (when technologies=true) |
+| `title` | `string` | Page title |
+| `url` | `string` | Canonical URL |
 
 #### Example: Load
 

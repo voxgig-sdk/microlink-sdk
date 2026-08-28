@@ -35,7 +35,7 @@ client = MicrolinkSDK.new
 ```ruby
 begin
   # load returns the ENTITY — call data_get for the GetWebsiteData record (raises on error).
-  getwebsitedata = client.GetWebsiteData.load()
+  getwebsitedata = client.GetWebsiteData.load({ "url" => "example_url" })
   puts getwebsitedata
 rescue => err
   warn "load failed: #{err}"
@@ -49,7 +49,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  getwebsitedata = client.GetWebsiteData.load()
+  getwebsitedata = client.GetWebsiteData.load({ "url" => "example" })
 rescue => err
   warn "load failed: #{err}"
 end
@@ -119,7 +119,7 @@ client = MicrolinkSDK.test
 
 # Entity ops return the ENTITY (raises on error);
 # call data_get for the mock record.
-getwebsitedata = client.GetWebsiteData.load()
+getwebsitedata = client.GetWebsiteData.load({ "url" => "example" })
 puts getwebsitedata
 ```
 
@@ -290,8 +290,31 @@ Create an instance: `get_website_data = client.GetWebsiteData`
 
 ```ruby
 # load returns the ENTITY — call data_get for the GetWebsiteData record (raises on error).
-get_website_data = client.GetWebsiteData.load()
+get_website_data = client.GetWebsiteData.load({ "url" => "url" })
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -371,7 +394,7 @@ stores the returned data and match criteria internally.
 
 ```ruby
 getwebsitedata = client.GetWebsiteData
-getwebsitedata.load()
+getwebsitedata.load({ "url" => "example" })
 
 # getwebsitedata.data_get now returns the getwebsitedata data from the last load
 # getwebsitedata.match_get returns the last match criteria

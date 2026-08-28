@@ -51,7 +51,7 @@ func main() {
     client := sdk.New()
 
     // Load a single getWebsiteData — the value is the loaded record.
-    getWebsiteData, err := client.GetWebsiteData(nil).Load(nil, nil)
+    getWebsiteData, err := client.GetWebsiteData(nil).Load(map[string]any{"url": "example_url"}, nil)
     if err != nil {
         panic(err)
     }
@@ -66,7 +66,7 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-getwebsitedata, err := client.GetWebsiteData(nil).Load(nil, nil)
+getwebsitedata, err := client.GetWebsiteData(nil).Load(map[string]any{"url": "example"}, nil)
 if err != nil {
     // handle err
     return
@@ -136,7 +136,7 @@ Create a mock client for unit testing — no server required:
 client := sdk.Test()
 
 getWebsiteData, err := client.GetWebsiteData(nil).Load(
-    nil, nil,
+    map[string]any{"url": "example"}, nil,
 )
 if err != nil {
     panic(err)
@@ -312,12 +312,35 @@ Create an instance: `getWebsiteData := client.GetWebsiteData(nil)`
 #### Example: Load
 
 ```go
-getWebsiteData, err := client.GetWebsiteData(nil).Load(nil, nil)
+getWebsiteData, err := client.GetWebsiteData(nil).Load(map[string]any{"url": "url"}, nil)
 if err != nil {
     panic(err)
 }
 fmt.Println(getWebsiteData) // the loaded record
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -394,7 +417,7 @@ stores the returned data and match criteria internally.
 
 ```go
 getwebsitedata := client.GetWebsiteData(nil)
-getwebsitedata.Load(nil, nil)
+getwebsitedata.Load(map[string]any{"url": "example"}, nil)
 
 // getwebsitedata.Data() now returns the getwebsitedata data from the last load
 // getwebsitedata.Match() returns the last match criteria

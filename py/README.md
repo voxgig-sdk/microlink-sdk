@@ -42,7 +42,7 @@ client = MicrolinkSDK()
 
 ```python
 try:
-    getwebsitedata = client.GetWebsiteData().load()
+    getwebsitedata = client.GetWebsiteData().load({"url": "example_url"})
     print(getwebsitedata)
 except Exception as err:
     print(f"load failed: {err}")
@@ -55,7 +55,7 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    getwebsitedata = client.GetWebsiteData().load()
+    getwebsitedata = client.GetWebsiteData().load({"url": "example"})
     print(getwebsitedata)
 except Exception as err:
     print(f"load failed: {err}")
@@ -124,7 +124,7 @@ client = MicrolinkSDK.test()
 
 # Entity ops return the ENTITY and raises on error;
 # call data_get() for the record.
-getwebsitedata = client.GetWebsiteData().load()
+getwebsitedata = client.GetWebsiteData().load({"url": "example"})
 # getwebsitedata contains the mock response record
 ```
 
@@ -295,8 +295,31 @@ Create an instance: `get_website_data = client.GetWebsiteData()`
 #### Example: Load
 
 ```python
-get_website_data = client.GetWebsiteData().load()
+get_website_data = client.GetWebsiteData().load({"url": "url"})
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -375,7 +398,7 @@ stores the returned data and match criteria internally.
 
 ```python
 getwebsitedata = client.GetWebsiteData()
-getwebsitedata.load()
+getwebsitedata.load({"url": "example"})
 
 # getwebsitedata.data_get() now returns the getwebsitedata data from the last load
 # getwebsitedata.match_get() returns the last match criteria

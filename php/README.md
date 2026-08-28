@@ -36,7 +36,7 @@ $client = new MicrolinkSDK();
 ```php
 try {
     // load() returns the ENTITY — call data_get() for the GetWebsiteData record (throws on error).
-    $getwebsitedata = $client->GetWebsiteData()->load();
+    $getwebsitedata = $client->GetWebsiteData()->load(["url" => "example_url"]);
     print_r($getwebsitedata);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -51,7 +51,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $getwebsitedata = $client->GetWebsiteData()->load();
+    $getwebsitedata = $client->GetWebsiteData()->load(["url" => "example"]);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,7 +125,7 @@ $client = MicrolinkSDK::test();
 
 // Entity ops return the ENTITY (throws on error);
 // call data_get() for the mock record.
-$getwebsitedata = $client->GetWebsiteData()->load();
+$getwebsitedata = $client->GetWebsiteData()->load(["url" => "example"]);
 print_r($getwebsitedata);
 ```
 
@@ -300,8 +300,31 @@ Create an instance: `$get_website_data = $client->GetWebsiteData();`
 
 ```php
 // load() returns the ENTITY — call data_get() for the GetWebsiteData record (throws on error).
-$get_website_data = $client->GetWebsiteData()->load();
+$get_website_data = $client->GetWebsiteData()->load(["url" => "url"]);
 ```
+
+## Features
+
+This SDK ships 1 optional features. Each is **inactive until you
+switch it on**, so an SDK you have not configured behaves exactly as if none of
+them existed — no retries, no cache, no logging, no measurable overhead.
+
+Activate a feature by name in the client options, alongside the options shown
+above:
+
+| Feature | What it does |
+|---|---|
+| [`test`](#test) | In-memory mock transport for testing without a live server |
+
+### test
+
+In-memory mock transport for testing without a live server.
+
+| Option | Default |
+|---|---|
+| `active` | `false` |
+
+Set `feature.test.active` to enable it, then override any of the options above.
 
 
 ## Advanced
@@ -381,7 +404,7 @@ stores the returned data and match criteria internally.
 
 ```php
 $getwebsitedata = $client->GetWebsiteData();
-$getwebsitedata->load();
+$getwebsitedata->load(["url" => "example"]);
 
 // $getwebsitedata->data_get() now returns the getwebsitedata data from the last load
 // $getwebsitedata->match_get() returns the last match criteria

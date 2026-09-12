@@ -12,6 +12,7 @@ main: kit: entity: get_website_data: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "date"
       req: false
       short: "Publication date"
@@ -78,6 +79,7 @@ main: kit: entity: get_website_data: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "Canonical URL"

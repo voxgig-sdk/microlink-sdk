@@ -49,6 +49,7 @@ module MicrolinkConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "date",
               "short" => "Publication date",
               "type" => "`$STRING`",
@@ -104,6 +105,7 @@ module MicrolinkConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "url",
               "short" => "Canonical URL",
               "type" => "`$STRING`",
@@ -443,7 +445,7 @@ module MicrolinkConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
-                  "parts" => [],
+                  "segments" => [],
                   "select" => {
                     "exist" => [
                       "adblock",
@@ -505,6 +507,7 @@ module MicrolinkConfig
                     "req" => "`reqdata`",
                     "res" => "`body.data`",
                   },
+                  "parts" => [],
                 },
               ],
             },

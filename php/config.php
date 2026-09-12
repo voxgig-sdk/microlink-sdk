@@ -63,6 +63,7 @@ class MicrolinkConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'date-time',
               'name' => 'date',
               'short' => 'Publication date',
               'type' => '`$STRING`',
@@ -118,6 +119,7 @@ class MicrolinkConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'url',
               'short' => 'Canonical URL',
               'type' => '`$STRING`',
@@ -457,7 +459,7 @@ class MicrolinkConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
-                  'parts' => [],
+                  'segments' => [],
                   'select' => [
                     'exist' => [
                       'adblock',
@@ -519,6 +521,7 @@ class MicrolinkConfig
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
                   ],
+                  'parts' => [],
                 ],
               ],
             ],

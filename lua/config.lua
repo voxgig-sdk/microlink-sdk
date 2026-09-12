@@ -37,6 +37,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "date",
             ["short"] = "Publication date",
             ["type"] = "`$STRING`",
@@ -92,6 +93,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["short"] = "Canonical URL",
             ["type"] = "`$STRING`",
@@ -431,7 +433,7 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/",
-                ["parts"] = {},
+                ["segments"] = {},
                 ["select"] = {
                   ["exist"] = {
                     "adblock",
@@ -493,6 +495,7 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.data`",
                 },
+                ["parts"] = {},
               },
             },
           },

@@ -105,7 +105,7 @@ local result, err = client:GetWebsiteData():load({ url = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
+| TypeScript | `@voxgig-sdk/microlink-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
 | Python | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
 | PHP | `voxgig-sdk/microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/microlink-sdk/go` | `go get github.com/voxgig-sdk/microlink-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:GetWebsiteData():load({ url = "example" })
 ### TypeScript
 
 ```ts
-import { MicrolinkSDK } from '@voxgig-sdk/microlink'
+import { MicrolinkSDK } from '@voxgig-sdk/microlink-sdk'
 
 const client = new MicrolinkSDK()
 

@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MicrolinkSDK } from '@voxgig-sdk/microlink'
+import { MicrolinkSDK } from '@voxgig-sdk/microlink-sdk'
 
 const client = new MicrolinkSDK()
 ```
@@ -425,7 +425,7 @@ microlink/
 Import the SDK from the package root:
 
 ```ts
-import { MicrolinkSDK } from '@voxgig-sdk/microlink'
+import { MicrolinkSDK } from '@voxgig-sdk/microlink-sdk'
 ```
 
 ### Entity state

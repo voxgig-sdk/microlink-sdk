@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "get_website_data": {
           "active": true,
@@ -563,6 +627,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /",
+                    "json": "{\"operationId\":\"getWebsiteData\",\"parameters\":[{\"description\":\"The target URL to extract data from\",\"in\":\"query\",\"name\":\"url\",\"required\":true,\"schema\":{\"example\":\"https://github.com/microlinkhq\",\"format\":\"uri\",\"type\":\"string\"}},{\"description\":\"Enable ad blocking\",\"in\":\"query\",\"name\":\"adblock\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable or disable CSS animations\",\"in\":\"query\",\"name\":\"animations\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable audio extraction\",\"in\":\"query\",\"name\":\"audio\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"CSS selector to click before capturing\",\"in\":\"query\",\"name\":\"click\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Color scheme preference (light or dark)\",\"in\":\"query\",\"name\":\"colorScheme\",\"required\":false,\"schema\":{\"enum\":[\"light\",\"dark\"],\"type\":\"string\"}},{\"description\":\"Custom data extraction rules\",\"in\":\"query\",\"name\":\"data\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Device emulation type\",\"in\":\"query\",\"name\":\"device\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Enable embed mode for content\",\"in\":\"query\",\"name\":\"embed\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Custom filename for downloaded resources\",\"in\":\"query\",\"name\":\"filename\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Filter data fields in response\",\"in\":\"query\",\"name\":\"filter\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Force bypass cache\",\"in\":\"query\",\"name\":\"force\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Custom JavaScript function to execute\",\"in\":\"query\",\"name\":\"function\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Custom HTTP headers\",\"in\":\"query\",\"name\":\"headers\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Enable iframe mode\",\"in\":\"query\",\"name\":\"iframe\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable insights analysis\",\"in\":\"query\",\"name\":\"insights\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable Lighthouse performance audit\",\"in\":\"query\",\"name\":\"lighthouse\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Detect technologies used on the website\",\"in\":\"query\",\"name\":\"technologies\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable or disable JavaScript execution\",\"in\":\"query\",\"name\":\"javascript\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Media type for rendering\",\"in\":\"query\",\"name\":\"mediaType\",\"required\":false,\"schema\":{\"enum\":[\"screen\",\"print\"],\"type\":\"string\"}},{\"description\":\"Enable metadata extraction\",\"in\":\"query\",\"name\":\"meta\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable ES modules support\",\"in\":\"query\",\"name\":\"modules\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Extract color palette from images\",\"in\":\"query\",\"name\":\"palette\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Generate PDF from the page\",\"in\":\"query\",\"name\":\"pdf\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"PDF page format\",\"in\":\"query\",\"name\":\"pdf.format\",\"required\":false,\"schema\":{\"enum\":[\"Letter\",\"Legal\",\"Tabloid\",\"Ledger\",\"A0\",\"A1\",\"A2\",\"A3\",\"A4\",\"A5\",\"A6\"],\"type\":\"string\"}},{\"description\":\"PDF page height\",\"in\":\"query\",\"name\":\"pdf.height\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"PDF landscape orientation\",\"in\":\"query\",\"name\":\"pdf.landscape\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"PDF page margins\",\"in\":\"query\",\"name\":\"pdf.margin\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"PDF page ranges to include\",\"in\":\"query\",\"name\":\"pdf.pageRanges\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"PDF scale factor\",\"in\":\"query\",\"name\":\"pdf.scale\",\"required\":false,\"schema\":{\"maximum\":2,\"minimum\":0.1,\"type\":\"number\"}},{\"description\":\"PDF page width\",\"in\":\"query\",\"name\":\"pdf.width\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Health check endpoint\",\"in\":\"query\",\"name\":\"ping\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Enable prerender mode for client-side frameworks\",\"in\":\"query\",\"name\":\"prerender\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Proxy configuration\",\"in\":\"query\",\"name\":\"proxy\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Number of retry attempts\",\"in\":\"query\",\"name\":\"retry\",\"required\":false,\"schema\":{\"minimum\":0,\"type\":\"integer\"}},{\"description\":\"Take a screenshot of the page\",\"in\":\"query\",\"name\":\"screenshot\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Color scheme for code screenshots\",\"in\":\"query\",\"name\":\"screenshot.codeScheme\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"CSS selector for element screenshot\",\"in\":\"query\",\"name\":\"screenshot.element\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Capture full page screenshot\",\"in\":\"query\",\"name\":\"screenshot.fullPage\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Add overlay to screenshot\",\"in\":\"query\",\"name\":\"screenshot.overlay\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Omit background in screenshot\",\"in\":\"query\",\"name\":\"screenshot.omitBackground\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Screenshot image format\",\"in\":\"query\",\"name\":\"screenshot.type\",\"required\":false,\"schema\":{\"enum\":[\"png\",\"jpeg\",\"webp\"],\"type\":\"string\"}},{\"description\":\"Custom scripts to inject\",\"in\":\"query\",\"name\":\"scripts\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Scroll configuration\",\"in\":\"query\",\"name\":\"scroll\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Custom CSS styles to inject\",\"in\":\"query\",\"name\":\"styles\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Stale cache time-to-live in milliseconds\",\"in\":\"query\",\"name\":\"staleTtl\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Request timeout in milliseconds\",\"in\":\"query\",\"name\":\"timeout\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Cache time-to-live in milliseconds\",\"in\":\"query\",\"name\":\"ttl\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Enable video extraction\",\"in\":\"query\",\"name\":\"video\",\"required\":false,\"schema\":{\"type\":\"boolean\"}},{\"description\":\"Viewport dimensions\",\"in\":\"query\",\"name\":\"viewport\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"CSS selector to wait for before capturing\",\"in\":\"query\",\"name\":\"waitForSelector\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Time to wait before capturing in milliseconds\",\"in\":\"query\",\"name\":\"waitForTimeout\",\"required\":false,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Wait until specific page load event\",\"in\":\"query\",\"name\":\"waitUntil\",\"required\":false,\"schema\":{\"enum\":[\"load\",\"domcontentloaded\",\"networkidle0\",\"networkidle2\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"examples\":{\"success\":{\"value\":{\"data\":{\"author\":null,\"date\":\"2020-09-22T09:33:36.000Z\",\"description\":\"Turn websites into data. microlink.io has 34 repositories available. Follow their code on GitHub.\",\"image\":{\"height\":280,\"size\":4118,\"size_pretty\":\"4.12 kB\",\"type\":\"png\",\"url\":\"https://avatars0.githubusercontent.com/u/29799436?s=280&v=4\",\"width\":280},\"lang\":\"en\",\"logo\":{\"height\":128,\"size\":6313,\"size_pretty\":\"6.31 kB\",\"type\":\"png\",\"url\":\"https://logo.clearbit.com/github.com\",\"width\":128},\"publisher\":\"GitHub\",\"title\":\"microlink.io\",\"url\":\"https://github.com/microlinkhq\"},\"status\":\"success\"}}},\"schema\":{\"properties\":{\"data\":{\"description\":\"Extracted data from the target URL\",\"properties\":{\"author\":{\"description\":\"Page author\",\"nullable\":true,\"type\":\"string\"},\"date\":{\"description\":\"Publication date\",\"format\":\"date-time\",\"type\":\"string\"},\"description\":{\"description\":\"Page description\",\"type\":\"string\"},\"image\":{\"description\":\"Primary image data\",\"properties\":{\"height\":{\"type\":\"integer\"},\"size\":{\"type\":\"integer\"},\"size_pretty\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"url\":{\"format\":\"uri\",\"type\":\"string\"},\"width\":{\"type\":\"integer\"}},\"type\":\"object\"},\"lang\":{\"description\":\"Page language\",\"type\":\"string\"},\"logo\":{\"description\":\"Site logo data\",\"properties\":{\"height\":{\"type\":\"integer\"},\"size\":{\"type\":\"integer\"},\"size_pretty\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"url\":{\"format\":\"uri\",\"type\":\"string\"},\"width\":{\"type\":\"integer\"}},\"type\":\"object\"},\"palette\":{\"description\":\"Color palette (when palette=true)\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"pdf\":{\"description\":\"PDF data (when pdf=true)\",\"properties\":{\"size\":{\"type\":\"integer\"},\"size_pretty\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"url\":{\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"publisher\":{\"description\":\"Page publisher\",\"type\":\"string\"},\"screenshot\":{\"description\":\"Screenshot data (when screenshot=true)\",\"properties\":{\"height\":{\"type\":\"integer\"},\"size\":{\"type\":\"integer\"},\"size_pretty\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"url\":{\"format\":\"uri\",\"type\":\"string\"},\"width\":{\"type\":\"integer\"}},\"type\":\"object\"},\"technologies\":{\"description\":\"Detected technologies (when technologies=true)\",\"items\":{\"properties\":{\"categories\":{\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"confidence\":{\"type\":\"integer\"},\"icon\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"version\":{\"type\":\"string\"},\"website\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"title\":{\"description\":\"Page title\",\"type\":\"string\"},\"url\":{\"description\":\"Canonical URL\",\"format\":\"uri\",\"type\":\"string\"}},\"type\":\"object\"},\"status\":{\"description\":\"Status of the API request\",\"enum\":[\"success\",\"error\"],\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Successful response with extracted data\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"message\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"enum\":[\"error\"],\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"message\":{\"description\":\"Rate limit error message\",\"type\":\"string\"},\"status\":{\"enum\":[\"error\"],\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Rate limit exceeded\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"type\":\"string\"},\"message\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"enum\":[\"error\"],\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/",
@@ -638,13 +708,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -735,6 +1015,102 @@
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
           "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
+          "version": "0.0.1"
         }
       },
       "flow": {
@@ -789,6 +1165,48 @@
         "website": "https://microlink.io/docs/api/getting-started/overview"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1343,6 +1761,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1384,7 +1803,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }

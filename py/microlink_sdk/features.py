@@ -1,12 +1,18 @@
 # Microlink SDK feature factory
 
 from microlink_sdk.feature.base_feature import MicrolinkBaseFeature
+from microlink_sdk.feature.ratelimit_feature import MicrolinkRatelimitFeature
+from microlink_sdk.feature.retry_feature import MicrolinkRetryFeature
 from microlink_sdk.feature.test_feature import MicrolinkTestFeature
+from microlink_sdk.feature.timeout_feature import MicrolinkTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: MicrolinkBaseFeature(),
+    "ratelimit": lambda: MicrolinkRatelimitFeature(),
+    "retry": lambda: MicrolinkRetryFeature(),
     "test": lambda: MicrolinkTestFeature(),
+    "timeout": lambda: MicrolinkTimeoutFeature(),
 }
 
 

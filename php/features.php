@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Microlink SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class MicrolinkFeatures
@@ -14,8 +17,14 @@ class MicrolinkFeatures
         switch ($name) {
             case "base":
                 return new MicrolinkBaseFeature();
+            case "ratelimit":
+                return new MicrolinkRatelimitFeature();
+            case "retry":
+                return new MicrolinkRetryFeature();
             case "test":
                 return new MicrolinkTestFeature();
+            case "timeout":
+                return new MicrolinkTimeoutFeature();
             default:
                 return new MicrolinkBaseFeature();
         }
@@ -31,7 +40,10 @@ class MicrolinkFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

@@ -105,12 +105,12 @@ local result, err = client:GetWebsiteData():load({ url = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/microlink-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
-| Python | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
-| PHP | `voxgig-sdk/microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
+| TypeScript | `@voxgig-sdk/microlink-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/tags) |
+| Python | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/tags) |
+| PHP | `voxgig-sdk/microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/microlink-sdk/go` | `go get github.com/voxgig-sdk/microlink-sdk/go@latest` |
-| Ruby | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
-| Lua | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/releases) |
+| Ruby | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/tags) |
+| Lua | `voxgig-sdk-microlink` | publish pending — [install from git tag](https://github.com/voxgig-sdk/microlink-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/microlink-sdk/go-cli` | `go install github.com/voxgig-sdk/microlink-sdk/go-cli/cmd/microlink@latest` |
 | Go MCP server | `github.com/voxgig-sdk/microlink-sdk/go-mcp` | `go get github.com/voxgig-sdk/microlink-sdk/go-mcp@latest` |
 

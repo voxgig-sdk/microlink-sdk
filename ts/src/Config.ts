@@ -127,9 +127,9 @@ class Config {
 
     entity: {
       
-      get_website_data: {
-      },
-
+        get_website_data: {
+        },
+  
     }
   }
 

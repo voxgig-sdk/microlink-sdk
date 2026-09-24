@@ -1,7 +1,7 @@
 // Typed models for the Microlink SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,19 +14,6 @@ import (
 
 // GetWebsiteData is the typed data model for the get_website_data entity.
 type GetWebsiteData struct {
-	Author *string `json:"author,omitempty"`
-	Date *string `json:"date,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Image *map[string]any `json:"image,omitempty"`
-	Lang *string `json:"lang,omitempty"`
-	Logo *map[string]any `json:"logo,omitempty"`
-	Palette *[]any `json:"palette,omitempty"`
-	Pdf *map[string]any `json:"pdf,omitempty"`
-	Publisher *string `json:"publisher,omitempty"`
-	Screenshot *map[string]any `json:"screenshot,omitempty"`
-	Technologies *[]any `json:"technologies,omitempty"`
-	Title *string `json:"title,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // GetWebsiteDataLoadMatch is the typed request payload for GetWebsiteData.LoadTyped.

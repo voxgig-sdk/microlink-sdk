@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -114,70 +107,83 @@ class Config {
             "fields": [
                 {
                     "name": "author",
-                    "short": "Page author",
-                    "type": "`$STRING`"
+                    "title": "Author",
+                    "type": "`$STRING`",
+                    "short": "Page author"
                 },
                 {
-                    "format": "date-time",
                     "name": "date",
+                    "title": "Date",
+                    "type": "`$STRING`",
                     "short": "Publication date",
-                    "type": "`$STRING`"
+                    "format": "date-time"
                 },
                 {
                     "name": "description",
-                    "short": "Page description",
-                    "type": "`$STRING`"
+                    "title": "Description",
+                    "type": "`$STRING`",
+                    "short": "Page description"
                 },
                 {
                     "name": "image",
-                    "short": "Primary image data",
-                    "type": "`$OBJECT`"
+                    "title": "Image",
+                    "type": "`$OBJECT`",
+                    "short": "Primary image data"
                 },
                 {
                     "name": "lang",
-                    "short": "Page language",
-                    "type": "`$STRING`"
+                    "title": "Lang",
+                    "type": "`$STRING`",
+                    "short": "Page language"
                 },
                 {
                     "name": "logo",
-                    "short": "Site logo data",
-                    "type": "`$OBJECT`"
+                    "title": "Logo",
+                    "type": "`$OBJECT`",
+                    "short": "Site logo data"
                 },
                 {
                     "name": "palette",
-                    "short": "Color palette (when palette=true)",
-                    "type": "`$ARRAY`"
+                    "title": "Palette",
+                    "type": "`$ARRAY`",
+                    "short": "Color palette (when palette=true)"
                 },
                 {
                     "name": "pdf",
-                    "short": "PDF data (when pdf=true)",
-                    "type": "`$OBJECT`"
+                    "title": "Pdf",
+                    "type": "`$OBJECT`",
+                    "short": "PDF data (when pdf=true)"
                 },
                 {
                     "name": "publisher",
-                    "short": "Page publisher",
-                    "type": "`$STRING`"
+                    "title": "Publisher",
+                    "type": "`$STRING`",
+                    "short": "Page publisher"
                 },
                 {
                     "name": "screenshot",
-                    "short": "Screenshot data (when screenshot=true)",
-                    "type": "`$OBJECT`"
+                    "title": "Screenshot",
+                    "type": "`$OBJECT`",
+                    "short": "Screenshot data (when screenshot=true)"
                 },
                 {
                     "name": "technologies",
-                    "short": "Detected technologies (when technologies=true)",
-                    "type": "`$ARRAY`"
+                    "title": "Technologies",
+                    "type": "`$ARRAY`",
+                    "short": "Detected technologies (when technologies=true)"
                 },
                 {
                     "name": "title",
-                    "short": "Page title",
-                    "type": "`$STRING`"
+                    "title": "Title",
+                    "type": "`$STRING`",
+                    "short": "Page title"
                 },
                 {
-                    "format": "uri",
                     "name": "url",
+                    "title": "Url",
+                    "type": "`$STRING`",
                     "short": "Canonical URL",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "name": "get_website_data",
@@ -187,334 +193,340 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "kind": "query",
-                                        "name": "adblock",
-                                        "orig": "adblock",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "animation",
-                                        "orig": "animation",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "audio",
-                                        "orig": "audio",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "click",
-                                        "orig": "click",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "color_scheme",
-                                        "orig": "color_scheme",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "data",
-                                        "orig": "data",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "device",
-                                        "orig": "device",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "embed",
-                                        "orig": "embed",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "filename",
-                                        "orig": "filename",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "filter",
-                                        "orig": "filter",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "force",
-                                        "orig": "force",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "function",
-                                        "orig": "function",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "header",
-                                        "orig": "header",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "iframe",
-                                        "orig": "iframe",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "insight",
-                                        "orig": "insight",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "javascript",
-                                        "orig": "javascript",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "lighthouse",
-                                        "orig": "lighthouse",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "media_type",
-                                        "orig": "media_type",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "meta",
-                                        "orig": "meta",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "module",
-                                        "orig": "module",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "palette",
-                                        "orig": "palette",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf",
-                                        "orig": "pdf",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_format",
-                                        "orig": "pdf_format",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_height",
-                                        "orig": "pdf_height",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_landscape",
-                                        "orig": "pdf_landscape",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_margin",
-                                        "orig": "pdf_margin",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_page_range",
-                                        "orig": "pdf_page_range",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_scale",
-                                        "orig": "pdf_scale",
-                                        "type": "`$NUMBER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "pdf_width",
-                                        "orig": "pdf_width",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "ping",
-                                        "orig": "ping",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "prerender",
-                                        "orig": "prerender",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "proxy",
-                                        "orig": "proxy",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "retry",
-                                        "orig": "retry",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot",
-                                        "orig": "screenshot",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot_code_scheme",
-                                        "orig": "screenshot_code_scheme",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot_element",
-                                        "orig": "screenshot_element",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot_full_page",
-                                        "orig": "screenshot_full_page",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot_omit_background",
-                                        "orig": "screenshot_omit_background",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot_overlay",
-                                        "orig": "screenshot_overlay",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "screenshot_type",
-                                        "orig": "screenshot_type",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "script",
-                                        "orig": "script",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "scroll",
-                                        "orig": "scroll",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "stale_ttl",
-                                        "orig": "stale_ttl",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "style",
-                                        "orig": "style",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "technology",
-                                        "orig": "technology",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "timeout",
-                                        "orig": "timeout",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "ttl",
-                                        "orig": "ttl",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "example": "https://github.com/microlinkhq",
-                                        "kind": "query",
-                                        "name": "url",
-                                        "orig": "url",
-                                        "reqd": true,
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "video",
-                                        "orig": "video",
-                                        "type": "`$BOOLEAN`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "viewport",
-                                        "orig": "viewport",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "wait_for_selector",
-                                        "orig": "wait_for_selector",
-                                        "type": "`$STRING`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "wait_for_timeout",
-                                        "orig": "wait_for_timeout",
-                                        "type": "`$INTEGER`"
-                                    },
-                                    {
-                                        "kind": "query",
-                                        "name": "wait_until",
-                                        "orig": "wait_until",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/",
                             "segments": [],
+                            "parts": [],
+                            "rename": {},
+                            "transform": {
+                                "req": "`reqdata`",
+                                "res": "`body.data`"
+                            },
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "adblock",
+                                        "orig": "adblock",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "animation",
+                                        "orig": "animation",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "audio",
+                                        "orig": "audio",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "click",
+                                        "orig": "click",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "color_scheme",
+                                        "orig": "color_scheme",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "data",
+                                        "orig": "data",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "device",
+                                        "orig": "device",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "embed",
+                                        "orig": "embed",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "filename",
+                                        "orig": "filename",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "filter",
+                                        "orig": "filter",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "force",
+                                        "orig": "force",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "function",
+                                        "orig": "function",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "header",
+                                        "orig": "header",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "iframe",
+                                        "orig": "iframe",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "insight",
+                                        "orig": "insight",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "javascript",
+                                        "orig": "javascript",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "lighthouse",
+                                        "orig": "lighthouse",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "media_type",
+                                        "orig": "media_type",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "meta",
+                                        "orig": "meta",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "module",
+                                        "orig": "module",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "palette",
+                                        "orig": "palette",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf",
+                                        "orig": "pdf",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_format",
+                                        "orig": "pdf_format",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_height",
+                                        "orig": "pdf_height",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_landscape",
+                                        "orig": "pdf_landscape",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_margin",
+                                        "orig": "pdf_margin",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_page_range",
+                                        "orig": "pdf_page_range",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_scale",
+                                        "orig": "pdf_scale",
+                                        "type": "`$NUMBER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "pdf_width",
+                                        "orig": "pdf_width",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "ping",
+                                        "orig": "ping",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "prerender",
+                                        "orig": "prerender",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "proxy",
+                                        "orig": "proxy",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "retry",
+                                        "orig": "retry",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot",
+                                        "orig": "screenshot",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot_code_scheme",
+                                        "orig": "screenshot_code_scheme",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot_element",
+                                        "orig": "screenshot_element",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot_full_page",
+                                        "orig": "screenshot_full_page",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot_omit_background",
+                                        "orig": "screenshot_omit_background",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot_overlay",
+                                        "orig": "screenshot_overlay",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "screenshot_type",
+                                        "orig": "screenshot_type",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "script",
+                                        "orig": "script",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "scroll",
+                                        "orig": "scroll",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "stale_ttl",
+                                        "orig": "stale_ttl",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "style",
+                                        "orig": "style",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "technology",
+                                        "orig": "technology",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "timeout",
+                                        "orig": "timeout",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "ttl",
+                                        "orig": "ttl",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "url",
+                                        "orig": "url",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "reqd": true,
+                                        "example": "https://github.com/microlinkhq"
+                                    },
+                                    {
+                                        "name": "video",
+                                        "orig": "video",
+                                        "type": "`$BOOLEAN`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "viewport",
+                                        "orig": "viewport",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "wait_for_selector",
+                                        "orig": "wait_for_selector",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "wait_for_timeout",
+                                        "orig": "wait_for_timeout",
+                                        "type": "`$INTEGER`",
+                                        "kind": "query"
+                                    },
+                                    {
+                                        "name": "wait_until",
+                                        "orig": "wait_until",
+                                        "type": "`$STRING`",
+                                        "kind": "query"
+                                    }
+                                ]
+                            },
                             "select": {
                                 "exist": [
                                     "adblock",
@@ -571,12 +583,7 @@ class Config {
                                     "wait_for_timeout",
                                     "wait_until"
                                 ]
-                            },
-                            "transform": {
-                                "req": "`reqdata`",
-                                "res": "`body.data`"
-                            },
-                            "parts": []
+                            }
                         }
                     ]
                 }

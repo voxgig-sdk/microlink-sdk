@@ -1,0 +1,560 @@
+# Entity: get_website_data
+
+main: kit: entity: get_website_data: {
+
+  alias: field: {}
+
+  fields: {
+    author: {
+      h: "Author"
+      n: "author"
+      r: false
+      sh: "Page author"
+      t: "`$STRING`"
+    }
+    date: {
+      fo: "date-time"
+      h: "Date"
+      n: "date"
+      r: false
+      sh: "Publication date"
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Page description"
+      t: "`$STRING`"
+    }
+    image: {
+      h: "Image"
+      n: "image"
+      r: false
+      sh: "Primary image data"
+      t: "`$OBJECT`"
+    }
+    lang: {
+      h: "Lang"
+      n: "lang"
+      r: false
+      sh: "Page language"
+      t: "`$STRING`"
+    }
+    logo: {
+      h: "Logo"
+      n: "logo"
+      r: false
+      sh: "Site logo data"
+      t: "`$OBJECT`"
+    }
+    palette: {
+      h: "Palette"
+      n: "palette"
+      r: false
+      sh: "Color palette (when palette=true)"
+      t: "`$ARRAY`"
+    }
+    pdf: {
+      h: "Pdf"
+      n: "pdf"
+      r: false
+      sh: "PDF data (when pdf=true)"
+      t: "`$OBJECT`"
+    }
+    publisher: {
+      h: "Publisher"
+      n: "publisher"
+      r: false
+      sh: "Page publisher"
+      t: "`$STRING`"
+    }
+    screenshot: {
+      h: "Screenshot"
+      n: "screenshot"
+      r: false
+      sh: "Screenshot data (when screenshot=true)"
+      t: "`$OBJECT`"
+    }
+    technologies: {
+      h: "Technologies"
+      n: "technologies"
+      r: false
+      sh: "Detected technologies (when technologies=true)"
+      t: "`$ARRAY`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Page title"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "Canonical URL"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "get_website_data"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "adblock"
+                or: "adblock"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "animation"
+                or: "animation"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "audio"
+                or: "audio"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "click"
+                or: "click"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "color_scheme"
+                or: "color_scheme"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "data"
+                or: "data"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "device"
+                or: "device"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "embed"
+                or: "embed"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "filename"
+                or: "filename"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force"
+                or: "force"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "function"
+                or: "function"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "header"
+                or: "header"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "iframe"
+                or: "iframe"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "insight"
+                or: "insight"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "javascript"
+                or: "javascript"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "lighthouse"
+                or: "lighthouse"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "media_type"
+                or: "media_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "meta"
+                or: "meta"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "module"
+                or: "module"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "palette"
+                or: "palette"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pdf"
+                or: "pdf"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pdf_format"
+                or: "pdf_format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pdf_height"
+                or: "pdf_height"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pdf_landscape"
+                or: "pdf_landscape"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "pdf_margin"
+                or: "pdf_margin"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pdf_page_range"
+                or: "pdf_page_range"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "pdf_scale"
+                or: "pdf_scale"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "pdf_width"
+                or: "pdf_width"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "ping"
+                or: "ping"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "prerender"
+                or: "prerender"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "proxy"
+                or: "proxy"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "retry"
+                or: "retry"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "screenshot"
+                or: "screenshot"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "screenshot_code_scheme"
+                or: "screenshot_code_scheme"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "screenshot_element"
+                or: "screenshot_element"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "screenshot_full_page"
+                or: "screenshot_full_page"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "screenshot_omit_background"
+                or: "screenshot_omit_background"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "screenshot_overlay"
+                or: "screenshot_overlay"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "screenshot_type"
+                or: "screenshot_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "script"
+                or: "script"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "scroll"
+                or: "scroll"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "stale_ttl"
+                or: "stale_ttl"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "style"
+                or: "style"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "technology"
+                or: "technology"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "timeout"
+                or: "timeout"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "ttl"
+                or: "ttl"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "https://github.com/microlinkhq"
+                k: "query"
+                n: "url"
+                or: "url"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "video"
+                or: "video"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "viewport"
+                or: "viewport"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "wait_for_selector"
+                or: "wait_for_selector"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "wait_for_timeout"
+                or: "wait_for_timeout"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "wait_until"
+                or: "wait_until"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/"
+          q: {
+            exist: [
+              "adblock"
+              "animation"
+              "audio"
+              "click"
+              "color_scheme"
+              "data"
+              "device"
+              "embed"
+              "filename"
+              "filter"
+              "force"
+              "function"
+              "header"
+              "iframe"
+              "insight"
+              "javascript"
+              "lighthouse"
+              "media_type"
+              "meta"
+              "module"
+              "palette"
+              "pdf"
+              "pdf_format"
+              "pdf_height"
+              "pdf_landscape"
+              "pdf_margin"
+              "pdf_page_range"
+              "pdf_scale"
+              "pdf_width"
+              "ping"
+              "prerender"
+              "proxy"
+              "retry"
+              "screenshot"
+              "screenshot_code_scheme"
+              "screenshot_element"
+              "screenshot_full_page"
+              "screenshot_omit_background"
+              "screenshot_overlay"
+              "screenshot_type"
+              "script"
+              "scroll"
+              "stale_ttl"
+              "style"
+              "technology"
+              "timeout"
+              "ttl"
+              "url"
+              "video"
+              "viewport"
+              "wait_for_selector"
+              "wait_for_timeout"
+              "wait_until"
+            ]
+          }
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

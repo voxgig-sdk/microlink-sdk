@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 MicrolinkUtility.registrar = ->(u) {
   u.clean = MicrolinkUtilities::Clean
+  u.clean_add = MicrolinkUtilities::CleanAdd
+  u.clean_explain = MicrolinkUtilities::CleanExplain
   u.done = MicrolinkUtilities::Done
   u.make_error = MicrolinkUtilities::MakeError
   u.feature_add = MicrolinkUtilities::FeatureAdd

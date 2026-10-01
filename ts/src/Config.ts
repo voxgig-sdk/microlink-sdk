@@ -238,7 +238,7 @@ class Config {
                   },
                   {
                     "name": "animation",
-                    "orig": "animation",
+                    "orig": "animations",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
@@ -256,7 +256,7 @@ class Config {
                   },
                   {
                     "name": "color_scheme",
-                    "orig": "color_scheme",
+                    "orig": "colorScheme",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -304,7 +304,7 @@ class Config {
                   },
                   {
                     "name": "header",
-                    "orig": "header",
+                    "orig": "headers",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -316,7 +316,7 @@ class Config {
                   },
                   {
                     "name": "insight",
-                    "orig": "insight",
+                    "orig": "insights",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
@@ -334,7 +334,7 @@ class Config {
                   },
                   {
                     "name": "media_type",
-                    "orig": "media_type",
+                    "orig": "mediaType",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -346,7 +346,7 @@ class Config {
                   },
                   {
                     "name": "module",
-                    "orig": "module",
+                    "orig": "modules",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
@@ -364,43 +364,43 @@ class Config {
                   },
                   {
                     "name": "pdf_format",
-                    "orig": "pdf_format",
+                    "orig": "pdf.format",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "pdf_height",
-                    "orig": "pdf_height",
+                    "orig": "pdf.height",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "pdf_landscape",
-                    "orig": "pdf_landscape",
+                    "orig": "pdf.landscape",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
                   {
                     "name": "pdf_margin",
-                    "orig": "pdf_margin",
+                    "orig": "pdf.margin",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "pdf_page_range",
-                    "orig": "pdf_page_range",
+                    "orig": "pdf.pageRanges",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "pdf_scale",
-                    "orig": "pdf_scale",
+                    "orig": "pdf.scale",
                     "type": "`$NUMBER`",
                     "kind": "query"
                   },
                   {
                     "name": "pdf_width",
-                    "orig": "pdf_width",
+                    "orig": "pdf.width",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -436,43 +436,43 @@ class Config {
                   },
                   {
                     "name": "screenshot_code_scheme",
-                    "orig": "screenshot_code_scheme",
+                    "orig": "screenshot.codeScheme",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "screenshot_element",
-                    "orig": "screenshot_element",
+                    "orig": "screenshot.element",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "screenshot_full_page",
-                    "orig": "screenshot_full_page",
+                    "orig": "screenshot.fullPage",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
                   {
                     "name": "screenshot_omit_background",
-                    "orig": "screenshot_omit_background",
+                    "orig": "screenshot.omitBackground",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
                   {
                     "name": "screenshot_overlay",
-                    "orig": "screenshot_overlay",
+                    "orig": "screenshot.overlay",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "screenshot_type",
-                    "orig": "screenshot_type",
+                    "orig": "screenshot.type",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "script",
-                    "orig": "script",
+                    "orig": "scripts",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -484,19 +484,19 @@ class Config {
                   },
                   {
                     "name": "stale_ttl",
-                    "orig": "stale_ttl",
+                    "orig": "staleTtl",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "style",
-                    "orig": "style",
+                    "orig": "styles",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "technology",
-                    "orig": "technology",
+                    "orig": "technologies",
                     "type": "`$BOOLEAN`",
                     "kind": "query"
                   },
@@ -534,19 +534,19 @@ class Config {
                   },
                   {
                     "name": "wait_for_selector",
-                    "orig": "wait_for_selector",
+                    "orig": "waitForSelector",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
                   {
                     "name": "wait_for_timeout",
-                    "orig": "wait_for_timeout",
+                    "orig": "waitForTimeout",
                     "type": "`$INTEGER`",
                     "kind": "query"
                   },
                   {
                     "name": "wait_until",
-                    "orig": "wait_until",
+                    "orig": "waitUntil",
                     "type": "`$STRING`",
                     "kind": "query"
                   }

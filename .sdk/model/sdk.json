@@ -231,7 +231,7 @@
                         "a": true,
                         "k": "query",
                         "n": "animation",
-                        "or": "animation",
+                        "or": "animations",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -255,7 +255,7 @@
                         "a": true,
                         "k": "query",
                         "n": "color_scheme",
-                        "or": "color_scheme",
+                        "or": "colorScheme",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -319,7 +319,7 @@
                         "a": true,
                         "k": "query",
                         "n": "header",
-                        "or": "header",
+                        "or": "headers",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -335,7 +335,7 @@
                         "a": true,
                         "k": "query",
                         "n": "insight",
-                        "or": "insight",
+                        "or": "insights",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -359,7 +359,7 @@
                         "a": true,
                         "k": "query",
                         "n": "media_type",
-                        "or": "media_type",
+                        "or": "mediaType",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -375,7 +375,7 @@
                         "a": true,
                         "k": "query",
                         "n": "module",
-                        "or": "module",
+                        "or": "modules",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -399,7 +399,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_format",
-                        "or": "pdf_format",
+                        "or": "pdf.format",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -407,7 +407,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_height",
-                        "or": "pdf_height",
+                        "or": "pdf.height",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -415,7 +415,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_landscape",
-                        "or": "pdf_landscape",
+                        "or": "pdf.landscape",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -423,7 +423,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_margin",
-                        "or": "pdf_margin",
+                        "or": "pdf.margin",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -431,7 +431,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_page_range",
-                        "or": "pdf_page_range",
+                        "or": "pdf.pageRanges",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -439,7 +439,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_scale",
-                        "or": "pdf_scale",
+                        "or": "pdf.scale",
                         "r": false,
                         "t": "`$NUMBER`"
                       },
@@ -447,7 +447,7 @@
                         "a": true,
                         "k": "query",
                         "n": "pdf_width",
-                        "or": "pdf_width",
+                        "or": "pdf.width",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -495,7 +495,7 @@
                         "a": true,
                         "k": "query",
                         "n": "screenshot_code_scheme",
-                        "or": "screenshot_code_scheme",
+                        "or": "screenshot.codeScheme",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -503,7 +503,7 @@
                         "a": true,
                         "k": "query",
                         "n": "screenshot_element",
-                        "or": "screenshot_element",
+                        "or": "screenshot.element",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -511,7 +511,7 @@
                         "a": true,
                         "k": "query",
                         "n": "screenshot_full_page",
-                        "or": "screenshot_full_page",
+                        "or": "screenshot.fullPage",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -519,7 +519,7 @@
                         "a": true,
                         "k": "query",
                         "n": "screenshot_omit_background",
-                        "or": "screenshot_omit_background",
+                        "or": "screenshot.omitBackground",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -527,7 +527,7 @@
                         "a": true,
                         "k": "query",
                         "n": "screenshot_overlay",
-                        "or": "screenshot_overlay",
+                        "or": "screenshot.overlay",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -535,7 +535,7 @@
                         "a": true,
                         "k": "query",
                         "n": "screenshot_type",
-                        "or": "screenshot_type",
+                        "or": "screenshot.type",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -543,7 +543,7 @@
                         "a": true,
                         "k": "query",
                         "n": "script",
-                        "or": "script",
+                        "or": "scripts",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -559,7 +559,7 @@
                         "a": true,
                         "k": "query",
                         "n": "stale_ttl",
-                        "or": "stale_ttl",
+                        "or": "staleTtl",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -567,7 +567,7 @@
                         "a": true,
                         "k": "query",
                         "n": "style",
-                        "or": "style",
+                        "or": "styles",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -575,7 +575,7 @@
                         "a": true,
                         "k": "query",
                         "n": "technology",
-                        "or": "technology",
+                        "or": "technologies",
                         "r": false,
                         "t": "`$BOOLEAN`"
                       },
@@ -624,7 +624,7 @@
                         "a": true,
                         "k": "query",
                         "n": "wait_for_selector",
-                        "or": "wait_for_selector",
+                        "or": "waitForSelector",
                         "r": false,
                         "t": "`$STRING`"
                       },
@@ -632,7 +632,7 @@
                         "a": true,
                         "k": "query",
                         "n": "wait_for_timeout",
-                        "or": "wait_for_timeout",
+                        "or": "waitForTimeout",
                         "r": false,
                         "t": "`$INTEGER`"
                       },
@@ -640,7 +640,7 @@
                         "a": true,
                         "k": "query",
                         "n": "wait_until",
-                        "or": "wait_until",
+                        "or": "waitUntil",
                         "r": false,
                         "t": "`$STRING`"
                       }
@@ -1197,7 +1197,12 @@
         },
         "base": "http://localhost:8000",
         "clean": {
-          "keys": "key,token,id"
+          "active": true,
+          "hint": "0",
+          "keys": "key,secret,token,password,passwd,authorization,cookie,credential,signature",
+          "mask": "[redacted]",
+          "min": "4",
+          "values": ""
         },
         "entity": {
           "`$CHILD`": {

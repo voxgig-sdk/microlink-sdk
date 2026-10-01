@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 MicrolinkUtility::setRegistrar(function (MicrolinkUtility $u): void {
     $u->clean = [MicrolinkClean::class, 'call'];
+    $u->clean_add = [MicrolinkClean::class, 'add'];
+    $u->clean_explain = [MicrolinkDone::class, 'clean_explain'];
     $u->done = [MicrolinkDone::class, 'call'];
     $u->make_error = [MicrolinkMakeError::class, 'call'];
     $u->feature_add = [MicrolinkFeatureAdd::class, 'call'];

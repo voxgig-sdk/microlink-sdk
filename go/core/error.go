@@ -12,6 +12,8 @@ type MicrolinkError struct {
 	Ctx    *Context `json:"-"`
 	Result any
 	Spec   any
+	// The HTTP status, -1 when there was no response.
+	Status int
 }
 
 func NewMicrolinkError(code string, msg string, ctx *Context) *MicrolinkError {
@@ -21,7 +23,12 @@ func NewMicrolinkError(code string, msg string, ctx *Context) *MicrolinkError {
 		Code:               code,
 		Msg:                msg,
 		Ctx:                ctx,
+		Status:             -1,
 	}
+}
+
+func (e *MicrolinkError) NotFound() bool {
+	return 404 == e.Status
 }
 
 func (e *MicrolinkError) Error() string {
@@ -35,6 +42,7 @@ func (e *MicrolinkError) Record() map[string]any {
 		"sdk":     e.Sdk,
 		"code":    e.Code,
 		"message": e.Msg,
+		"status":  e.Status,
 		"result":  e.Result,
 		"spec":    e.Spec,
 	}

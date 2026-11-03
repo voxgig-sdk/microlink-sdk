@@ -12,5 +12,5 @@ var NewTestFeatureFunc func() Feature
 
 var NewTimeoutFeatureFunc func() Feature
 
-var NewGetWebsiteDataEntityFunc func(client *MicrolinkSDK, entopts map[string]any) MicrolinkEntity
+var NewGetWebsiteDataEntityFunc func(client *MicrolinkSDK, entopts map[string]any) MicrolinkEntityBase
 

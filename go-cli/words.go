@@ -75,7 +75,7 @@ func runOp(client *sdk.MicrolinkSDK, op string, query *eng.Value, entityAtom eng
 
 // entityFor dispatches on the lowercase entity name. The generator
 // emits one `case "<name>":` per entity defined in the SDK model.
-func entityFor(client *sdk.MicrolinkSDK, name string) (sdk.MicrolinkEntity, error) {
+func entityFor(client *sdk.MicrolinkSDK, name string) (sdk.MicrolinkEntityBase, error) {
 	switch strings.ToLower(name) {
 	case "get_website_data":
 		return client.GetWebsiteData(nil), nil

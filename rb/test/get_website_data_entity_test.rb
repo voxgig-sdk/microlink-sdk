@@ -6,10 +6,28 @@ require_relative "../Microlink_sdk"
 require_relative "runner"
 
 class GetWebsiteDataEntityTest < Minitest::Test
+  # main.kit.test.live.strict is true (the default is true): a live
+  # request that fails, or a live test missing an input it needs,
+  # fails the test.
+  # An account with no record for a test to read skips it either way.
+  LIVE_STRICT = true
+
   def test_create_instance
     testsdk = MicrolinkSDK.test(nil, nil)
     ent = testsdk.GetWebsiteData(nil)
     assert !ent.nil?
+  end
+
+  def test_validate
+    cfg = MicrolinkConfig.shared_config
+    unless cfg["feature"].is_a?(Hash) && cfg["feature"].key?("validate")
+      skip("feature not present in this SDK: validate")
+    end
+    client = MicrolinkSDK.test(nil, { "feature" => { "validate" => { "active" => true } } })
+    err = assert_raises(StandardError) do
+      client.GetWebsiteData(nil).load({ "adblock" => "x", "url" => "x" }, nil)
+    end
+    assert_equal "validate_failed", err.code
   end
 
   def test_basic_flow
@@ -22,12 +40,6 @@ class GetWebsiteDataEntityTest < Minitest::Test
         skip(_reason || "skipped via sdk-test-control.json")
         return
       end
-    end
-    # The basic flow consumes synthetic IDs from the fixture. In live mode
-    # without an *_ENTID env override, those IDs hit the live API and 4xx.
-    if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set MICROLINK_TEST_GET_WEBSITE_DATA_ENTID JSON to run live"
-      return
     end
     client = setup[:client]
 
@@ -42,6 +54,9 @@ class GetWebsiteDataEntityTest < Minitest::Test
     # LOAD
     get_website_data_ref01_ent = client.GetWebsiteData(nil)
     get_website_data_ref01_match_dt0 = {}
+    if setup[:live]
+      get_website_data_ref01_match_dt0["url"] = "https://github.com/microlinkhq"
+    end
     get_website_data_ref01_data_dt0_loaded = get_website_data_ref01_ent.load(get_website_data_ref01_match_dt0, nil)
     assert !get_website_data_ref01_data_dt0_loaded.nil?
 
@@ -52,7 +67,7 @@ def get_website_data_basic_setup(extra)
   Runner.load_env_local
 
   entity_data_file = File.join(__dir__, "..", "..", ".sdk", "test", "entity", "get_website_data", "GetWebsiteDataTestData.json")
-  entity_data_source = File.read(entity_data_file)
+  entity_data_source = File.read(entity_data_file, encoding: "UTF-8")
   entity_data = JSON.parse(entity_data_source)
 
   options = {}
@@ -71,9 +86,8 @@ def get_website_data_basic_setup(extra)
     }
   )
 
-  # Detect ENTID env override before envOverride consumes it. When live
-  # mode is on without a real override, the basic test runs against synthetic
-  # IDs from the fixture and 4xx's. Surface this so the test can skip.
+  # Whether *_ENTID supplied the idmap, read before env_override consumes
+  # it: without it, the ids a live flow binds are the fixture's synthetic ones.
   entid_env_raw = ENV["MICROLINK_TEST_GET_WEBSITE_DATA_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 

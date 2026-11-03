@@ -3,5 +3,17 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Page author",
+      "Page description",
+      "Page language",
+      "Powerful API for automating browser actions. Retrieve meta data, take screenshots, generate PDFs, get color palettes, embed content, identify technologies, and more.",
+      "Primary image data",
+      "Production API Server",
+      "Publication date",
+      "Successful response with extracted data"
+    ]
+  }
 }

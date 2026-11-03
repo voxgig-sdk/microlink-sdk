@@ -13,7 +13,12 @@ type Context = core.Context
 type Utility = core.Utility
 type Feature = core.Feature
 type Entity = core.Entity
-type MicrolinkEntity = core.MicrolinkEntity
+type MicrolinkEntityBase = core.MicrolinkEntityBase
+
+// Deprecated: use MicrolinkEntityBase.
+type MicrolinkEntity = core.MicrolinkEntityBase
+
+type StreamItem = core.StreamItem
 type FetcherFunc = core.FetcherFunc
 type Spec = core.Spec
 type Result = core.Result
@@ -41,7 +46,7 @@ func init() {
 	core.NewTimeoutFeatureFunc = func() core.Feature {
 		return feature.NewTimeoutFeature()
 	}
-	core.NewGetWebsiteDataEntityFunc = func(client *core.MicrolinkSDK, entopts map[string]any) core.MicrolinkEntity {
+	core.NewGetWebsiteDataEntityFunc = func(client *core.MicrolinkSDK, entopts map[string]any) core.MicrolinkEntityBase {
 		return entity.NewGetWebsiteDataEntity(client, entopts)
 	}
 }

@@ -16,6 +16,7 @@ const PLAN: any[] = [
     "path": "/",
     "args": [],
     "select": {
+      "url": "https://github.com/microlinkhq",
       "adblock": "v1",
       "animation": "v1",
       "audio": "v1",
@@ -63,7 +64,6 @@ const PLAN: any[] = [
       "technology": "v1",
       "timeout": "v1",
       "ttl": "v1",
-      "url": "https://github.com/microlinkhq",
       "video": "v1",
       "viewport": "v1",
       "wait_for_selector": "v1",
@@ -71,6 +71,10 @@ const PLAN: any[] = [
       "wait_until": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "url",
       "adblock",
@@ -125,6 +129,220 @@ const PLAN: any[] = [
       "waitForSelector",
       "waitForTimeout",
       "waitUntil"
+    ],
+    "queryArgs": [
+      {
+        "name": "adblock",
+        "wire": "adblock"
+      },
+      {
+        "name": "animation",
+        "wire": "animations"
+      },
+      {
+        "name": "audio",
+        "wire": "audio"
+      },
+      {
+        "name": "click",
+        "wire": "click"
+      },
+      {
+        "name": "color_scheme",
+        "wire": "colorScheme"
+      },
+      {
+        "name": "data",
+        "wire": "data"
+      },
+      {
+        "name": "device",
+        "wire": "device"
+      },
+      {
+        "name": "embed",
+        "wire": "embed"
+      },
+      {
+        "name": "filename",
+        "wire": "filename"
+      },
+      {
+        "name": "filter",
+        "wire": "filter"
+      },
+      {
+        "name": "force",
+        "wire": "force"
+      },
+      {
+        "name": "function",
+        "wire": "function"
+      },
+      {
+        "name": "header",
+        "wire": "headers"
+      },
+      {
+        "name": "iframe",
+        "wire": "iframe"
+      },
+      {
+        "name": "insight",
+        "wire": "insights"
+      },
+      {
+        "name": "javascript",
+        "wire": "javascript"
+      },
+      {
+        "name": "lighthouse",
+        "wire": "lighthouse"
+      },
+      {
+        "name": "media_type",
+        "wire": "mediaType"
+      },
+      {
+        "name": "meta",
+        "wire": "meta"
+      },
+      {
+        "name": "module",
+        "wire": "modules"
+      },
+      {
+        "name": "palette",
+        "wire": "palette"
+      },
+      {
+        "name": "pdf",
+        "wire": "pdf"
+      },
+      {
+        "name": "pdf_format",
+        "wire": "pdf.format"
+      },
+      {
+        "name": "pdf_height",
+        "wire": "pdf.height"
+      },
+      {
+        "name": "pdf_landscape",
+        "wire": "pdf.landscape"
+      },
+      {
+        "name": "pdf_margin",
+        "wire": "pdf.margin"
+      },
+      {
+        "name": "pdf_page_range",
+        "wire": "pdf.pageRanges"
+      },
+      {
+        "name": "pdf_scale",
+        "wire": "pdf.scale"
+      },
+      {
+        "name": "pdf_width",
+        "wire": "pdf.width"
+      },
+      {
+        "name": "ping",
+        "wire": "ping"
+      },
+      {
+        "name": "prerender",
+        "wire": "prerender"
+      },
+      {
+        "name": "proxy",
+        "wire": "proxy"
+      },
+      {
+        "name": "retry",
+        "wire": "retry"
+      },
+      {
+        "name": "screenshot",
+        "wire": "screenshot"
+      },
+      {
+        "name": "screenshot_code_scheme",
+        "wire": "screenshot.codeScheme"
+      },
+      {
+        "name": "screenshot_element",
+        "wire": "screenshot.element"
+      },
+      {
+        "name": "screenshot_full_page",
+        "wire": "screenshot.fullPage"
+      },
+      {
+        "name": "screenshot_omit_background",
+        "wire": "screenshot.omitBackground"
+      },
+      {
+        "name": "screenshot_overlay",
+        "wire": "screenshot.overlay"
+      },
+      {
+        "name": "screenshot_type",
+        "wire": "screenshot.type"
+      },
+      {
+        "name": "script",
+        "wire": "scripts"
+      },
+      {
+        "name": "scroll",
+        "wire": "scroll"
+      },
+      {
+        "name": "stale_ttl",
+        "wire": "staleTtl"
+      },
+      {
+        "name": "style",
+        "wire": "styles"
+      },
+      {
+        "name": "technology",
+        "wire": "technologies"
+      },
+      {
+        "name": "timeout",
+        "wire": "timeout"
+      },
+      {
+        "name": "ttl",
+        "wire": "ttl"
+      },
+      {
+        "name": "url",
+        "wire": "url"
+      },
+      {
+        "name": "video",
+        "wire": "video"
+      },
+      {
+        "name": "viewport",
+        "wire": "viewport"
+      },
+      {
+        "name": "wait_for_selector",
+        "wire": "waitForSelector"
+      },
+      {
+        "name": "wait_for_timeout",
+        "wire": "waitForTimeout"
+      },
+      {
+        "name": "wait_until",
+        "wire": "waitUntil"
+      }
     ],
     "auth": null,
     "status": 200,

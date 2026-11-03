@@ -102,6 +102,7 @@ class Config {
       },
       "optspec": {
         "clearTimer": "`$FUNCTION`",
+        "now": "`$FUNCTION`",
         "setTimer": "`$FUNCTION`"
       },
       "strict": false,
@@ -354,13 +355,15 @@ class Config {
                     "name": "palette",
                     "orig": "palette",
                     "type": "`$BOOLEAN`",
-                    "kind": "query"
+                    "kind": "query",
+                    "field": true
                   },
                   {
                     "name": "pdf",
                     "orig": "pdf",
                     "type": "`$BOOLEAN`",
-                    "kind": "query"
+                    "kind": "query",
+                    "field": true
                   },
                   {
                     "name": "pdf_format",
@@ -432,7 +435,8 @@ class Config {
                     "name": "screenshot",
                     "orig": "screenshot",
                     "type": "`$BOOLEAN`",
-                    "kind": "query"
+                    "kind": "query",
+                    "field": true
                   },
                   {
                     "name": "screenshot_code_scheme",
@@ -518,7 +522,8 @@ class Config {
                     "type": "`$STRING`",
                     "kind": "query",
                     "reqd": true,
-                    "example": "https://github.com/microlinkhq"
+                    "example": "https://github.com/microlinkhq",
+                    "field": true
                   },
                   {
                     "name": "video",
@@ -554,60 +559,12 @@ class Config {
               },
               "select": {
                 "exist": [
-                  "adblock",
-                  "animation",
-                  "audio",
-                  "click",
-                  "color_scheme",
-                  "data",
-                  "device",
-                  "embed",
-                  "filename",
-                  "filter",
-                  "force",
-                  "function",
-                  "header",
-                  "iframe",
-                  "insight",
-                  "javascript",
-                  "lighthouse",
-                  "media_type",
-                  "meta",
-                  "module",
-                  "palette",
-                  "pdf",
-                  "pdf_format",
-                  "pdf_height",
-                  "pdf_landscape",
-                  "pdf_margin",
-                  "pdf_page_range",
-                  "pdf_scale",
-                  "pdf_width",
-                  "ping",
-                  "prerender",
-                  "proxy",
-                  "retry",
-                  "screenshot",
-                  "screenshot_code_scheme",
-                  "screenshot_element",
-                  "screenshot_full_page",
-                  "screenshot_omit_background",
-                  "screenshot_overlay",
-                  "screenshot_type",
-                  "script",
-                  "scroll",
-                  "stale_ttl",
-                  "style",
-                  "technology",
-                  "timeout",
-                  "ttl",
-                  "url",
-                  "video",
-                  "viewport",
-                  "wait_for_selector",
-                  "wait_for_timeout",
-                  "wait_until"
+                  "url"
                 ]
+              },
+              "response": {
+                "kind": "json",
+                "media": "application/json"
               }
             }
           ]

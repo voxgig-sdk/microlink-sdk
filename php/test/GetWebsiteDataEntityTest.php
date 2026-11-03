@@ -11,11 +11,33 @@ use Voxgig\Struct\Struct as Vs;
 
 class GetWebsiteDataEntityTest extends TestCase
 {
+    // main.kit.test.live.strict is true (the default is true): a live
+    // request that fails, or a live test missing an input it needs,
+    // fails the test.
+    // An account with no record for a test to read skips it either way.
+    private const LIVE_STRICT = true;
+
     public function test_create_instance(): void
     {
         $testsdk = MicrolinkSDK::test(null, null);
         $ent = $testsdk->GetWebsiteData(null);
         $this->assertNotNull($ent);
+    }
+
+    public function test_validate(): void
+    {
+        $cfg = MicrolinkConfig::shared_config();
+        if (!isset($cfg["feature"]["validate"])) {
+            $this->markTestSkipped('feature not present in this SDK: validate');
+        }
+        $client = MicrolinkSDK::test(null, ["feature" => ["validate" => ["active" => true]]]);
+        $err = null;
+        try {
+            $client->GetWebsiteData(null)->load(["adblock" => 'x', "url" => 'x'], null);
+        } catch (\Throwable $e) {
+            $err = $e;
+        }
+        $this->assertSame('validate_failed', $err->sdk_code ?? null);
     }
 
     public function test_basic_flow(): void
@@ -30,12 +52,6 @@ class GetWebsiteDataEntityTest extends TestCase
                 return;
             }
         }
-        // The basic flow consumes synthetic IDs from the fixture. In live mode
-        // without an *_ENTID env override, those IDs hit the live API and 4xx.
-        if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set MICROLINK_TEST_GET_WEBSITE_DATA_ENTID JSON to run live");
-            return;
-        }
         $client = $setup["client"];
 
         // Bootstrap entity data from existing test data.
@@ -49,6 +65,9 @@ class GetWebsiteDataEntityTest extends TestCase
         // LOAD
         $get_website_data_ref01_ent = $client->GetWebsiteData(null);
         $get_website_data_ref01_match_dt0 = [];
+        if (!empty($setup["live"])) {
+            $get_website_data_ref01_match_dt0["url"] = 'https://github.com/microlinkhq';
+        }
         $get_website_data_ref01_data_dt0_loaded = $get_website_data_ref01_ent->load($get_website_data_ref01_match_dt0, null);
         $this->assertNotNull($get_website_data_ref01_data_dt0_loaded);
 
@@ -74,9 +93,8 @@ function get_website_data_basic_setup($extra)
         $idmap[$k] = strtoupper($k);
     }
 
-    // Detect ENTID env override before envOverride consumes it. When live
-    // mode is on without a real override, the basic test runs against synthetic
-    // IDs from the fixture and 4xx's. Surface this so the test can skip.
+    // Whether *_ENTID supplied the idmap, read before env_override consumes
+    // it: without it, the ids a live flow binds are the fixture's synthetic ones.
     $entid_env_raw = getenv("MICROLINK_TEST_GET_WEBSITE_DATA_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
